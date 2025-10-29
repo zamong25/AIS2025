@@ -61,12 +61,12 @@ MarkupSafe==3.0.2
 matplotlib==3.10.7
 mergedeep==1.3.4
 multidict==6.6.0
-numpy==1.26.4
+numpy>=1.26.0
 openai==2.6.1
 outcome==1.3.0.post0
 packaging==25.0
 pandas==2.3.0
-pandas-ta==0.4.71b0
+pandas-ta>=0.3.14b
 passlib==1.7.4
 pillow==11.2.1
 platformdirs==4.5.0
