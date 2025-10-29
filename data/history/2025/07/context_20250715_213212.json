@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_072554",
+    "entry_time": "2025-07-15T07:25:54.580935",
+    "direction": "SHORT",
+    "entry_price": 160.5,
+    "entry_reason": "1일, 1시간, 15분 차트의 명확한 하락 추세와 현재 반등의 낮은 거래량이 강력한 매도 근거다. 모든 에이전트 보고서가 하락 시나리오를 지지하며, 특히 솔라나 네트워크의 단기 악재는 하방 압력을 가중시킨다. 현재 가격대는 손익비가 매우 매력적인 진입점을 제공한다.",
+    "primary_scenario": "현재의 약한 반등 및 횡보 구간은 하락 추세를 이어가기 위한 베어 플래그(bear flag)일 가능성이 높다. 이 구간의 상단에서 숏 포지션에 진입하여, 주요 지지선인 $157.12의 하향 돌파 및 추가 하락을 목표로 한다.",
+    "target_price": 157.2,
+    "stop_loss": 162.1,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

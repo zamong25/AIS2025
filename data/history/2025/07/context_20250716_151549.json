@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_060041",
+    "entry_time": "2025-07-16T06:00:41.287434",
+    "direction": "SHORT",
+    "entry_price": 161.95,
+    "entry_reason": "1일봉과 1시간봉의 명확한 하락 추세와 Lux Algo 오실레이터의 매도 신호가 강력한 근거. 차티스트와 퀀트의 분석 역시 하락 시나리오를 강력히 지지하며, 횡보 구간의 거래량 감소는 하락 지속 가능성을 높인다. 내 눈으로 확인한 차트 패턴이 모든 보고서와 일치한다.",
+    "primary_scenario": "현재 $162-$164 구간의 단기 횡보는 1시간봉의 하락 추세에 대한 베어 플래그(Bear Flag) 패턴으로 판단됨. $162 지지선이 붕괴되면 매도세가 강화되어 다음 주요 지지선인 $158.50까지 하락할 것으로 예상한다.",
+    "target_price": 158.5,
+    "stop_loss": 163.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

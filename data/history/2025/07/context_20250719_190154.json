@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_103324",
+    "entry_time": "2025-07-16T10:33:24.036490",
+    "direction": "SHORT",
+    "entry_price": 167.2,
+    "entry_reason": "1) 5분/15분봉 Lux Algo 오실레이터의 과매수권 이탈 및 매도 신호 발생.\\n2) 상승 중 거래량 감소로 인한 상승 동력 약화 확인.\\n3) 일봉 차트의 장기 하락 추세와 일치하는 방향.\\n4) 솔라나 네트워크 장애라는 단기 악재 발생.",
+    "primary_scenario": "단기 과매수 상태에서 $168.50 저항선에 도달 후, 5분/15분봉에서 명확한 반전 신호(Lux Algo SELL, ChoCH)가 발생했다. 이는 장기 하락 추세 내의 기술적 반등이 마무리되고, 다시 하락 파동이 시작되는 시나리오다. 1차 목표는 $164, 2차 목표는 $162 지지선이다.",
+    "target_price": 164.0,
+    "stop_loss": 168.7,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

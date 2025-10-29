@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250713_124932",
+    "entry_time": "2025-07-13T12:49:32.427724",
+    "direction": "SHORT",
+    "entry_price": 160.8,
+    "entry_reason": "가장 중요한 근거는 일봉 차트의 명백한 하락 추세다. 현재의 단기 횡보는 하락 지속을 위한 힘 모으기 과정으로 판단된다. 모든 에이전트들이 161.00 지지선 붕괴 시 하락 가능성을 높게 보고 있으며, 이는 내 차트 분석과 일치한다. 곧 있을 네트워크 불안정성 뉴스 또한 단기 하방 압력으로 작용할 수 있다.",
+    "primary_scenario": "현재의 좁은 박스권(161.00-162.50)이 하방으로 이탈하며, 일봉 차트의 하락 추세를 이어받아 주요 지지선인 156.00까지 하락하는 시나리오를 예상한다.",
+    "target_price": 158.4,
+    "stop_loss": 162.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

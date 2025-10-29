@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rsync:*)",
+      "Bash(python:*)",
+      "Bash(source:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(pip3 install:*)",
+      "Bash(# 테스트 파일들을 tests/ 로 이동\nmv test_*.py tests/\n\n# 로그 파일들을 logs/ 로 이동\nmv *.log logs/ 2>/dev/null || echo \"로그 파일 없음\"\n\n# 스크립트들을 scripts/ 로 이동\nmv chart_capture.py scripts/\nmv clean_text_for_ai.py scripts/\n\n# 데이터베이스 파일을 data/database/ 로 이동\nmv *.db data/database/ 2>/dev/null || echo \"DB 파일 없음\"\n\n# 스크린샷들을 data/ 로 이동 (이미 screenshots 폴더가 있음)\nmv screenshots data/\n\necho \"2단계 이동 완료\")",
+      "Bash(# 구버전 파일들을 backup/ 로 이동\nmv delphi_orchestrator*.py backup/\n\n# 프롬프트 백업 파일들을 backup/ 로 이동\nmv prompts/*backup*.txt backup/ 2>/dev/null || echo \"백업 프롬프트 없음\"\n\n# 나머지 파일들 확인\necho \"=== 정리 완료 후 루트 디렉토리 현황 ===\"\nls -la | grep -E \"^\\-\" | grep -v \"^\\-.*\\s\\.$\"\n\necho -e \"\\n=== 새로운 폴더 구조 ===\"\nfind . -maxdepth 2 -type d | sort)",
+      "Bash(new_venv/Scripts/pip.exe install:*)",
+      "Bash(curl:*)",
+      "Bash(export:*)",
+      "Bash(poetry run:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": []
+  }
+}

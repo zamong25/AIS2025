@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_202938",
+    "entry_time": "2025-07-15T20:29:38.870130",
+    "direction": "SHORT",
+    "entry_price": 158.9,
+    "entry_reason": "차트의 명백한 하락 구조와 임박한 복합 악재의 시너지를 활용한 숏 포지션 진입이 최적의 전략이다. 에이전트들의 분석 역시 하락 시나리오를 강력히 지지하고 있어 확신을 더한다. 리스크는 뉴스 발표 시점의 변동성이지만, 확인 매매와 여유 있는 손절가로 대응한다.",
+    "primary_scenario": "기술적으로 모든 시간대에서 하락 추세가 우세하며, 162달러 저항선 돌파 실패로 매도세가 확인되었다. 여기에 솔라나 해킹, SEC 규제 발표, 네트워크 지연이라는 3가지 강력한 부정적 뉴스가 임박하여 하방 압력을 극대화할 것이다. 159달러 지지선이 붕괴되면 투매가 발생하며 156달러, 나아가 150달러까지 하락할 것으로 예상한다.",
+    "target_price": 156.0,
+    "stop_loss": 162.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

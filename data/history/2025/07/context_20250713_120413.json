@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250712_163948",
+    "entry_time": "2025-07-12T16:39:48.328409",
+    "direction": "SHORT",
+    "entry_price": 159.02,
+    "entry_reason": "일봉, 1시간봉, 15분봉, 5분봉 모두 하락 추세 정렬 상태이며, 에이전트들의 분석 또한 만장일치로 하락을 지지한다. 차트상 156달러 붕괴 시 매도세가 가속화될 명확한 기술적 구조를 보이고 있다.",
+    "primary_scenario": "현재 가격은 주요 지지선인 156달러를 앞두고 잠시 소강상태에 있다. 곧 있을 솔라나 네트워크 유지보수 등 부정적 촉매제가 작용하여 156달러 지지선을 하향 돌파하고, 150달러 초반까지 하락 추세가 이어질 것으로 예상한다.",
+    "target_price": 152.0,
+    "stop_loss": 158.0,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

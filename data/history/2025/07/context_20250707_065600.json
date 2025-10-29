@@ -1,0 +1,33 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250706_210236",
+    "entry_time": "2025-07-06T21:02:36.894484",
+    "direction": "SHORT",
+    "entry_price": 151.55,
+    "entry_reason": "탐험 모드 ULTRA_SAFE: 초안전 모드 - 최소 포지션으로 시스템 검증 (거래 8/50)",
+    "primary_scenario": "",
+    "target_price": 0,
+    "stop_loss": 0,
+    "invalidation_condition": "가격이 $153.00 - $154.00 저항 구간을 유의미한 거래량과 함께 상향 돌파하고, 1시간봉(1H)에서 강세 시장 구조(BOS)를 형성할 경우 현재의 약세 편향 가설은 무효화됩니다.",
+    "invalidation_price": 153.0,
+    "key_levels": [
+      147.0,
+      149.0,
+      151.5,
+      153.0
+    ],
+    "key_events": [
+      "솔라나 기반 대형 게임파이(GameFi) DApp 출시 (다음 주 중)",
+      "솔라나 재단 Q2 보고서 발표 (생태계 성장 및 재무 현황 포함 가능성) (다음 주 중)"
+    ],
+    "initial_confidence": 30,
+    "initial_agent_scores": {
+      "chartist": 35,
+      "journalist": 7,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "12-48시간"
+  },
+  "history": []
+}

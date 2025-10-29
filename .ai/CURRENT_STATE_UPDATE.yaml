@@ -1,0 +1,23 @@
+# 마이그레이션 진행 상태 추가
+migration:
+  phase: 1_domain_models
+  started_at: "2025-07-21T00:36:04.024302"
+  components:
+    domain_models:
+      status: in_progress
+      progress: 10%
+    infrastructure_adapters:
+      status: pending
+      progress: 0%
+    application_services:
+      status: pending
+      progress: 0%
+    presentation_layer:
+      status: pending
+      progress: 0%
+  
+  next_tasks:
+    - "Position 도메인 모델 완성"
+    - "Trade 도메인 모델 구현"
+    - "비즈니스 규칙 추출"
+    - "도메인 모델 테스트 작성"

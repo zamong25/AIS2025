@@ -1,0 +1,28 @@
+# 거래 설정 스키마
+type: object
+properties:
+  symbol:
+    type: string
+    pattern: "^[A-Z]+USDT$"
+    default: "SOLUSDT"
+  
+  risk_management:
+    type: object
+    properties:
+      max_position_size_percent:
+        type: number
+        minimum: 1
+        maximum: 100
+        default: 10
+      max_daily_loss_percent:
+        type: number
+        minimum: 1
+        maximum: 20
+        default: 5
+      default_leverage:
+        type: integer
+        minimum: 1
+        maximum: 20
+        default: 10
+        
+required: ["symbol", "risk_management"]

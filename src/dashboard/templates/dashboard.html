@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delphi Trading System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'delphi-bg': '#0B1426',
+                        'delphi-card': '#1E2A3A',
+                        'delphi-border': '#2A3441',
+                        'delphi-accent': '#3B82F6',
+                        'delphi-green': '#10B981',
+                        'delphi-red': '#EF4444',
+                        'delphi-yellow': '#F59E0B',
+                        'delphi-purple': '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(30, 42, 58, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pulse-dot { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .timeline-item { transition: all 0.3s ease; }
+        .timeline-item:hover { transform: translateX(5px); background: rgba(59, 130, 246, 0.1); }
+        .log-console {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log-console::-webkit-scrollbar { width: 6px; }
+        .log-console::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 3px;
+        }
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .detail-modal.active { display: flex; }
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 0.5rem;
+            z-index: 50;
+        }
+        .dropdown.active { display: block; }
+        .tab-active {
+            border-bottom: 2px solid #3B82F6;
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-delphi-bg text-white">
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="detail-modal">
+        <div class="glass-effect rounded-xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitle" class="text-xl font-bold"></h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modalContent" class="text-gray-300"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-effect border-b border-delphi-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-6">
+                    <h1 class="text-xl font-bold flex items-center">
+                        🏛️ <span class="ml-2">DELPHI</span>
+                    </h1>
+                    <div id="currentPrice" class="text-lg font-semibold text-delphi-accent">
+                        $0.00
+                    </div>
+                    <!-- 현재 포지션 -->
+                    <div id="currentPosition" class="flex items-center text-sm px-3 py-1 rounded-lg bg-delphi-card border border-delphi-border">
+                        <span class="text-gray-400 mr-2">포지션:</span>
+                        <span id="positionValue" class="font-bold text-gray-400">HOLD</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div id="statusDot" class="w-2 h-2 bg-gray-500 rounded-full pulse-dot mr-2"></div>
+                        <span id="systemStatus" class="text-gray-400">STOPPED</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Control Dropdown -->
+                    <div class="relative">
+                        <button
+                            id="controlBtn"
+                            onclick="toggleControlDropdown()"
+                            class="flex items-center space-x-2 px-3 py-2 text-sm bg-delphi-card hover:bg-delphi-border rounded-lg transition"
+                            title="시스템 제어"
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            </svg>
+                            <span>제어</span>
+                        </button>
+                        <div id="controlDropdown" class="dropdown glass-effect rounded-lg shadow-xl min-w-[200px]">
+                            <div id="lockedView" class="p-4">
+                                <p class="text-xs text-gray-400 mb-3">시스템 제어 잠금 상태</p>
+                                <button
+                                    onclick="showUnlockForm()"
+                                    class="w-full bg-delphi-accent hover:bg-blue-600 text-white text-sm py-2 rounded transition"
+                                >
+                                    🔒 잠금 해제
+                                </button>
+                            </div>
+                            <div id="unlockView" class="p-4 hidden">
+                                <input
+                                    type="password"
+                                    id="controlPassword"
+                                    placeholder="비밀번호"
+                                    class="w-full px-3 py-2 bg-delphi-bg border border-delphi-border rounded text-sm mb-2 focus:outline-none focus:border-delphi-accent"
+                                    onkeypress="if(event.key === 'Enter') unlockControl()"
+                                >
+                                <div class="flex space-x-2">
+                                    <button
+                                        onclick="unlockControl()"
+                                        class="flex-1 bg-delphi-accent hover:bg-blue-600 text-white text-sm py-2 rounded transition"
+                                    >
+                                        확인
+                                    </button>
+                                    <button
+                                        onclick="cancelUnlock()"
+                                        class="px-3 bg-gray-600 hover:bg-gray-700 text-white text-sm py-2 rounded transition"
+                                    >
+                                        취소
+                                    </button>
+                                </div>
+                                <p id="unlockError" class="text-delphi-red text-xs mt-2 hidden"></p>
+                            </div>
+                            <div id="unlockedView" class="p-3 hidden">
+                                <button
+                                    onclick="startSystem()"
+                                    class="w-full bg-delphi-green hover:bg-green-600 text-white text-sm py-2 rounded mb-2 transition flex items-center justify-center"
+                                >
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                    </svg>
+                                    시작
+                                </button>
+                                <button
+                                    onclick="stopSystem()"
+                                    class="w-full bg-delphi-red hover:bg-red-600 text-white text-sm py-2 rounded mb-2 transition flex items-center justify-center"
+                                >
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path>
+                                    </svg>
+                                    정지
+                                </button>
+                                <button
+                                    onclick="restartSystem()"
+                                    class="w-full bg-delphi-accent hover:bg-blue-600 text-white text-sm py-2 rounded mb-3 transition flex items-center justify-center"
+                                >
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                    재시작
+                                </button>
+                                <button
+                                    onclick="lockControl()"
+                                    class="w-full text-gray-400 hover:text-white text-xs py-1"
+                                >
+                                    🔒 다시 잠그기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="logout()" class="text-gray-400 hover:text-white" title="로그아웃">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- Performance Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="glass-effect rounded-lg p-4">
+                <div class="text-xs text-gray-400 mb-1">총 수익률</div>
+                <div id="totalReturn" class="text-2xl font-bold text-delphi-green">+0.0%</div>
+                <div class="text-xs text-gray-500 mt-1"><span id="totalTrades">0</span> 거래</div>
+            </div>
+            <div class="glass-effect rounded-lg p-4">
+                <div class="text-xs text-gray-400 mb-1">승률</div>
+                <div id="winRate" class="text-2xl font-bold text-white">0%</div>
+                <div class="text-xs text-gray-500 mt-1"><span id="wins">0</span>승 <span id="losses">0</span>패</div>
+            </div>
+            <div class="glass-effect rounded-lg p-4">
+                <div class="text-xs text-gray-400 mb-1">총 손익</div>
+                <div id="totalPnL" class="text-2xl font-bold text-delphi-green">$0</div>
+                <div class="text-xs text-gray-500 mt-1">USDT</div>
+            </div>
+        </div>
+
+        <!-- AI Agent Analysis with Tabs -->
+        <div class="glass-effect rounded-lg p-5 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-base font-semibold">🤖 AI 에이전트 분석</h2>
+                <div class="text-xs text-gray-400">
+                    <span id="lastUpdate">마지막 업데이트: -</span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex space-x-4 border-b border-delphi-border mb-4">
+                <button
+                    onclick="switchTab('realtime')"
+                    id="realtimeTab"
+                    class="tab-active pb-2 text-sm font-medium transition"
+                >
+                    실시간
+                </button>
+                <button
+                    onclick="switchTab('history')"
+                    id="historyTab"
+                    class="text-gray-400 hover:text-white pb-2 text-sm font-medium transition"
+                >
+                    히스토리
+                </button>
+            </div>
+
+            <!-- Realtime Timeline -->
+            <div id="realtimeContent" class="space-y-3">
+                <div class="text-center py-8 text-gray-400 text-sm">
+                    시스템이 실행되면 AI 에이전트 분석이 표시됩니다
+                </div>
+            </div>
+
+            <!-- History Timeline -->
+            <div id="historyContent" class="space-y-3 hidden">
+                <div class="text-center py-8 text-gray-400 text-sm">
+                    이전 분석 내역을 불러오는 중...
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+
+// 솔라나 가격 업데이트
+async function updateSolanaPrice() {
+    try {
+        const response = await fetch('/api/solana-price', {
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        });
+        const data = await response.json();
+        if (data.success) {
+            document.getElementById('currentPrice').textContent = `$${data.price}`;
+        }
+    } catch (error) {
+        console.error('솔라나 가격 업데이트 실패:', error);
+    }
+}
+        // Global State
+        let socket = null;
+        let isUnlocked = false;
+        let systemStatus = 'stopped';
+        let currentTab = 'realtime';
+        let realtimeAnalysis = [];
+        let historyAnalysis = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            connectWebSocket();
+
+            // Mock 데이터 로드 (시연용)
+            loadMockMetrics();
+            loadMockRealtimeAnalyses();
+            loadHistoryAnalysis();
+
+            checkSystemStatus();
+
+            // 솔라나 가격 업데이트 시작
+            updateSolanaPrice();
+            setInterval(updateSolanaPrice, 5000);
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                const dropdown = document.getElementById('controlDropdown');
+                const btn = document.getElementById('controlBtn');
+                if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+
+        // Control Dropdown Functions
+        function toggleControlDropdown() {
+            document.getElementById('controlDropdown').classList.toggle('active');
+        }
+
+        function showUnlockForm() {
+            document.getElementById('lockedView').classList.add('hidden');
+            document.getElementById('unlockView').classList.remove('hidden');
+            document.getElementById('controlPassword').focus();
+        }
+
+        function cancelUnlock() {
+            document.getElementById('lockedView').classList.remove('hidden');
+            document.getElementById('unlockView').classList.add('hidden');
+            document.getElementById('controlPassword').value = '';
+            document.getElementById('unlockError').classList.add('hidden');
+        }
+
+        async function unlockControl() {
+            const password = document.getElementById('controlPassword').value;
+            const errorDiv = document.getElementById('unlockError');
+
+
+            try {
+                const requestBody = { password: password };
+
+                const response = await fetch('/api/unlock', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(requestBody)
+                });
+
+
+                const data = await response.json();
+
+                if (data.success) {
+                    isUnlocked = true;
+                    document.getElementById('unlockView').classList.add('hidden');
+                    document.getElementById('unlockedView').classList.remove('hidden');
+                    addLog('제어 패널 잠금 해제됨', 'success');
+                } else {
+                    errorDiv.textContent = data.message || '비밀번호가 올바르지 않습니다';
+                    errorDiv.classList.remove('hidden');
+                    setTimeout(() => errorDiv.classList.add('hidden'), 3000);
+                }
+            } catch (error) {
+                console.error('[FRONTEND DEBUG] ⚠️ 예외 발생:', error);
+                errorDiv.textContent = '오류 발생: ' + error.message;
+                errorDiv.classList.remove('hidden');
+            }
+
+            document.getElementById('controlPassword').value = '';
+        }
+
+        function lockControl() {
+            isUnlocked = false;
+            document.getElementById('unlockedView').classList.add('hidden');
+            document.getElementById('lockedView').classList.remove('hidden');
+            document.getElementById('controlDropdown').classList.remove('active');
+            addLog('제어 패널 잠김', 'info');
+        }
+
+        // Tab Switching
+        function switchTab(tab) {
+            currentTab = tab;
+            if (tab === 'realtime') {
+                document.getElementById('realtimeTab').classList.add('tab-active');
+                document.getElementById('historyTab').classList.remove('tab-active');
+                document.getElementById('realtimeContent').classList.remove('hidden');
+                document.getElementById('historyContent').classList.add('hidden');
+            } else {
+                document.getElementById('historyTab').classList.add('tab-active');
+                document.getElementById('realtimeTab').classList.remove('tab-active');
+                document.getElementById('historyContent').classList.remove('hidden');
+                document.getElementById('realtimeContent').classList.add('hidden');
+            }
+        }
+
+        // WebSocket Connection
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            socket = new WebSocket(`${protocol}//${window.location.host}/ws`);
+
+            socket.onopen = function() {
+                addLog('시스템 연결됨', 'success');
+            };
+
+            socket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                handleWebSocketMessage(data);
+            };
+
+            socket.onclose = function() {
+                addLog('연결 끊김 - 재연결 중...', 'warning');
+                setTimeout(connectWebSocket, 5000);
+            };
+        }
+
+        function handleWebSocketMessage(data) {
+            if (data.type === 'system_status') {
+                updateSystemStatus(data.status);
+            } else if (data.type === 'run_start') {
+                // 새 실행 시작 - 기존 실시간 카드를 히스토리로 이동
+                moveRealtimeToHistory();
+            } else if (data.type === 'agent_analysis') {
+                addAgentAnalysis(data.agent, data.analysis, data.run_id);
+
+                // 신디사이저 결과면 포지션 업데이트
+                if (data.agent === '신디사이저' && data.analysis.final_decision) {
+                    updatePosition(data.analysis.final_decision.action);
+                }
+            } else if (data.type === 'log') {
+                addLog(data.message, data.level);
+            } else if (data.type === 'metrics') {
+                updateMetrics(data.metrics);
+            }
+        }
+
+        function updateSystemStatus(status) {
+            systemStatus = status;
+            const dot = document.getElementById('statusDot');
+            const text = document.getElementById('systemStatus');
+
+            if (status === 'running') {
+                dot.className = 'w-2 h-2 bg-delphi-green rounded-full pulse-dot mr-2';
+                text.textContent = 'RUNNING';
+                text.className = 'text-delphi-green';
+            } else if (status === 'stopped') {
+                dot.className = 'w-2 h-2 bg-gray-500 rounded-full mr-2';
+                text.textContent = 'STOPPED';
+                text.className = 'text-gray-400';
+            } else if (status === 'error') {
+                dot.className = 'w-2 h-2 bg-delphi-red rounded-full pulse-dot mr-2';
+                text.textContent = 'ERROR';
+                text.className = 'text-delphi-red';
+            }
+        }
+
+        function updatePosition(action) {
+            const positionValue = document.getElementById('positionValue');
+
+            // action 값 정규화
+            let position = 'HOLD';
+            if (action) {
+                const actionLower = action.toLowerCase();
+                if (actionLower.includes('롱') || actionLower.includes('long') || actionLower.includes('매수')) {
+                    position = 'LONG';
+                } else if (actionLower.includes('숏') || actionLower.includes('short') || actionLower.includes('매도')) {
+                    position = 'SHORT';
+                } else if (actionLower.includes('청산') || actionLower.includes('관망') || actionLower.includes('hold')) {
+                    position = 'HOLD';
+                }
+            }
+
+            // 포지션 표시 업데이트
+            positionValue.textContent = position;
+
+            // 색상 변경
+            if (position === 'LONG') {
+                positionValue.className = 'font-bold text-delphi-green';
+            } else if (position === 'SHORT') {
+                positionValue.className = 'font-bold text-delphi-red';
+            } else {
+                positionValue.className = 'font-bold text-gray-400';
+            }
+
+            console.log(`[POSITION] Updated to: ${position} (from action: ${action})`);
+        }
+
+        // AI Analysis Functions
+        function moveRealtimeToHistory() {
+            console.log('[DEBUG] Moving realtime cards to history...');
+            const realtimeContainer = document.getElementById('realtimeContent');
+            const historyContainer = document.getElementById('historyContent');
+
+            // 실시간 컨테이너의 모든 카드를 가져옴
+            const realtimeCards = Array.from(realtimeContainer.children);
+
+            if (realtimeCards.length === 0) {
+                console.log('[DEBUG] No cards to move');
+                return;
+            }
+
+            // 각 카드를 히스토리로 이동
+            realtimeCards.forEach(card => {
+                // "대기 중..." 메시지는 제외
+                if (!card.classList.contains('text-center')) {
+                    // 히스토리 컨테이너 맨 위에 추가
+                    historyContainer.insertBefore(card, historyContainer.firstChild);
+                }
+            });
+
+            // 실시간 컨테이너 비우기
+            realtimeContainer.innerHTML = '<p class="text-center text-gray-400 py-8">새 분석 실행 대기 중...</p>';
+
+            // 히스토리에서 100개 초과 시 오래된 것 삭제
+            while (historyContainer.children.length > 100) {
+                historyContainer.removeChild(historyContainer.lastChild);
+            }
+
+            console.log(`[DEBUG] Moved ${realtimeCards.length} cards to history`);
+        }
+
+        function addAgentAnalysis(agent, analysis, runId) {
+            const item = createAnalysisItem(agent, analysis, runId);
+            const container = document.getElementById('realtimeContent');
+
+            // "대기 중..." 메시지 제거
+            if (container.querySelector('.text-center')) {
+                container.innerHTML = '';
+            }
+
+            container.insertAdjacentHTML('afterbegin', item);
+
+            // 실시간 영역은 20개까지만 유지 (오래된 것은 자동 삭제)
+            while (container.children.length > 20) {
+                container.removeChild(container.lastChild);
+            }
+
+            document.getElementById('lastUpdate').textContent = `마지막 업데이트: ${new Date().toLocaleTimeString()}`;
+        }
+
+        function createAnalysisItem(agent, analysis, runId, timestamp) {
+            const icons = {
+                '신디사이저': '🎭', '차티스트': '📊', '저널리스트': '📰',
+                '퀀트': '🔢', '스토익': '🧘'
+            };
+            const icon = icons[agent] || '🤖';
+
+            // timestamp가 있으면 사용, 없으면 현재 시간
+            let time;
+            if (timestamp) {
+                const date = new Date(timestamp);
+                time = date.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            } else {
+                time = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }
+
+            const runIdAttr = runId ? `data-run-id="${runId}"` : '';
+
+            return `
+                <div class="timeline-item glass-effect rounded-lg p-3 cursor-pointer text-sm" ${runIdAttr} onclick='showDetail(${JSON.stringify(agent)}, ${JSON.stringify(analysis)})'>
+                    <div class="flex items-start">
+                        <div class="text-xl mr-2">${icon}</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-medium text-white">${agent}</h3>
+                                <span class="text-xs text-gray-400">${time}</span>
+                            </div>
+                            <p class="text-xs text-gray-300 mb-1">${analysis.summary || '분석 중...'}</p>
+                            <div class="text-xs text-delphi-accent hover:text-blue-400">상세보기 →</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function loadHistoryAnalysis() {
+            try {
+                const response = await fetch('/api/analysis-history');
+                const data = await response.json();
+
+                const container = document.getElementById('historyContent');
+                if (data.history && data.history.length > 0) {
+                    container.innerHTML = '';
+                    // 역순으로 정렬 (최신이 위로)
+                    data.history.reverse().forEach(item => {
+                        const agent = item.agent || '알 수 없음';
+                        const analysis = item.analysis || {};
+                        const runId = item.run_id || '';
+                        const timestamp = item.timestamp || null;
+                        container.insertAdjacentHTML('beforeend', createAnalysisItem(agent, analysis, runId, timestamp));
+                    });
+                    console.log(`[HISTORY] Loaded ${data.history.length} items`);
+                } else {
+                    container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">이전 분석 내역이 없습니다</div>';
+                }
+            } catch (error) {
+                console.error('Failed to load history:', error);
+                document.getElementById('historyContent').innerHTML =
+                    '<div class="text-center py-8 text-gray-400 text-sm">히스토리를 불러올 수 없습니다</div>';
+            }
+        }
+
+        // Mock 메트릭 로드 (시연용)
+        async function loadMockMetrics() {
+            try {
+                const response = await fetch('/api/metrics');
+                const data = await response.json();
+
+                // 메트릭 업데이트
+                if (data.metrics) {
+                    const m = data.metrics;
+
+                    // 총 수익률
+                    if (m.total_return !== undefined) {
+                        const elem = document.getElementById('totalReturn');
+                        elem.textContent = (m.total_return >= 0 ? '+' : '') + m.total_return.toFixed(1) + '%';
+                        elem.className = `text-2xl font-bold ${m.total_return >= 0 ? 'text-delphi-green' : 'text-delphi-red'}`;
+                    }
+
+                    // 승률
+                    if (m.win_rate !== undefined) {
+                        document.getElementById('winRate').textContent = m.win_rate.toFixed(1) + '%';
+                    }
+
+                    // 총 거래
+                    if (m.total_trades !== undefined) {
+                        document.getElementById('totalTrades').textContent = m.total_trades;
+                    }
+
+                    // 승/패 표시
+                    if (m.wins !== undefined && m.losses !== undefined) {
+                        document.getElementById('wins').textContent = m.wins;
+                        document.getElementById('losses').textContent = m.losses;
+                    }
+
+                    // 총 손익 (현재 자본 - 초기 자본으로 계산)
+                    if (m.current_capital !== undefined) {
+                        const initialCapital = 10000; // 초기 자본 가정
+                        const pnl = m.current_capital - initialCapital;
+                        const elem = document.getElementById('totalPnL');
+                        elem.textContent = '$' + pnl.toFixed(0);
+                        elem.className = `text-2xl font-bold ${pnl >= 0 ? 'text-delphi-green' : 'text-delphi-red'}`;
+                    }
+
+                    console.log('[MOCK] Metrics loaded:', m);
+                }
+
+                // 포지션 업데이트
+                if (data.current_position) {
+                    updatePosition(data.current_position);
+                }
+            } catch (error) {
+                console.error('Failed to load mock metrics:', error);
+            }
+        }
+
+        // Mock 실시간 분석 로드 (시연용)
+        async function loadMockRealtimeAnalyses() {
+            try {
+                const response = await fetch('/api/realtime-analyses');
+                const data = await response.json();
+
+                const container = document.getElementById('realtimeContent');
+                if (data.analyses && data.analyses.length > 0) {
+                    container.innerHTML = '';
+                    // 정순으로 표시 (차티스트 → 저널리스트 → 퀀트 → 스토익 → 신디사이저)
+                    data.analyses.forEach(item => {
+                        const agent = item.agent || '알 수 없음';
+                        const analysis = item.analysis || {};
+                        const runId = item.run_id || '';
+                        const timestamp = item.timestamp || null;
+                        container.insertAdjacentHTML('beforeend', createAnalysisItem(agent, analysis, runId, timestamp));
+                    });
+                    console.log(`[MOCK] Realtime analyses loaded: ${data.analyses.length} items`);
+
+                    // 마지막 업데이트 시간 표시
+                    if (data.analyses.length > 0) {
+                        const lastTimestamp = data.analyses[data.analyses.length - 1].timestamp;
+                        if (lastTimestamp) {
+                            const time = new Date(lastTimestamp).toLocaleTimeString();
+                            document.getElementById('lastUpdate').textContent = `마지막 업데이트: ${time}`;
+                        }
+                    }
+                } else {
+                    container.innerHTML = '<div class="text-center py-8 text-gray-400 text-sm">실시간 분석 데이터가 없습니다</div>';
+                }
+            } catch (error) {
+                console.error('Failed to load mock realtime analyses:', error);
+                document.getElementById('realtimeContent').innerHTML =
+                    '<div class="text-center py-8 text-gray-400 text-sm">실시간 분석을 불러올 수 없습니다</div>';
+            }
+        }
+
+        // Modal Functions
+        function showDetail(agent, analysis) {
+            document.getElementById('modalTitle').textContent = `${agent} 상세 분석`;
+
+            // result 전체를 JSON으로 표시
+            const jsonStr = JSON.stringify(analysis, null, 2);
+
+            document.getElementById('modalContent').innerHTML = `
+                <div class="space-y-3 text-sm">
+                    <!-- 요약 정보 -->
+                    ${analysis.summary ? `
+                        <div class="p-3 bg-delphi-surface rounded border border-delphi-border">
+                            <h4 class="font-semibold mb-2 text-delphi-accent">요약</h4>
+                            <p class="text-gray-300">${analysis.summary}</p>
+                        </div>
+                    ` : ''}
+
+                    <!-- 전체 데이터 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-delphi-accent">전체 분석 데이터</h4>
+                            <button onclick="copyToClipboard()" class="px-3 py-1 bg-delphi-surface hover:bg-delphi-border rounded text-xs transition-colors">
+                                복사
+                            </button>
+                        </div>
+                        <pre id="analysisJson" class="bg-black/50 p-4 rounded overflow-auto max-h-96 text-xs border border-delphi-border"><code class="text-gray-300">${escapeHtml(jsonStr)}</code></pre>
+                    </div>
+                </div>
+            `;
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function copyToClipboard() {
+            const jsonText = document.getElementById('analysisJson').textContent;
+            navigator.clipboard.writeText(jsonText).then(() => {
+                addLog('분석 데이터 복사 완료', 'success');
+            }).catch(err => {
+                addLog('복사 실패: ' + err, 'error');
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+
+        // Log Functions
+        function addLog(message, level = 'info') {
+            const console = document.getElementById('logConsole');
+            const time = new Date().toLocaleTimeString();
+            const colors = {
+                'success': 'text-green-400',
+                'warning': 'text-yellow-400',
+                'error': 'text-red-400',
+                'info': 'text-blue-400'
+            };
+            const color = colors[level] || 'text-gray-400';
+
+            const logLine = `<div class="${color}">[${time}] ${message}</div>`;
+            console.insertAdjacentHTML('beforeend', logLine);
+            console.scrollTop = console.scrollHeight;
+
+            while (console.children.length > 100) {
+                console.removeChild(console.firstChild);
+            }
+        }
+
+        function clearLogs() {
+            document.getElementById('logConsole').innerHTML = '<div class="text-gray-500">로그가 지워졌습니다</div>';
+        }
+
+        // System Control
+        async function startSystem() {
+            if (!confirm('트레이딩 시스템을 시작하시겠습니까?')) return;
+
+            try {
+                const response = await fetch('/api/system/start', {
+                    method: 'POST',
+                });
+                const data = await response.json();
+                if (data.success) {
+                    addLog('시스템 시작 중...', 'success');
+                    updateSystemStatus('running');
+                    document.getElementById('controlDropdown').classList.remove('active');
+                }
+            } catch (error) {
+                addLog('시스템 시작 실패: ' + error, 'error');
+            }
+        }
+
+        async function stopSystem() {
+            if (!confirm('트레이딩 시스템을 정지하시겠습니까?')) return;
+
+            try {
+                const response = await fetch('/api/system/stop', {
+                    method: 'POST',
+                });
+                const data = await response.json();
+                if (data.success) {
+                    addLog('시스템 정지됨', 'warning');
+                    updateSystemStatus('stopped');
+                    document.getElementById('controlDropdown').classList.remove('active');
+                }
+            } catch (error) {
+                addLog('시스템 정지 실패: ' + error, 'error');
+            }
+        }
+
+        async function restartSystem() {
+            if (!confirm('시스템을 재시작하시겠습니까?')) return;
+
+            await stopSystem();
+            setTimeout(() => startSystem(), 2000);
+        }
+
+        // Data Loading
+        async function loadInitialData() {
+            try {
+                const response = await fetch('/api/performance', {
+                });
+                const data = await response.json();
+                updateMetrics(data);
+            } catch (error) {
+                console.error('Failed to load data:', error);
+            }
+        }
+
+        function updateMetrics(metrics) {
+            if (metrics.total_return !== undefined) {
+                const elem = document.getElementById('totalReturn');
+                elem.textContent = (metrics.total_return >= 0 ? '+' : '') + metrics.total_return.toFixed(1) + '%';
+                elem.className = `text-2xl font-bold ${metrics.total_return >= 0 ? 'text-delphi-green' : 'text-delphi-red'}`;
+            }
+            if (metrics.win_rate !== undefined) {
+                document.getElementById('winRate').textContent = metrics.win_rate.toFixed(0) + '%';
+            }
+            if (metrics.total_pnl !== undefined) {
+                const elem = document.getElementById('totalPnL');
+                elem.textContent = '$' + metrics.total_pnl.toFixed(0);
+                elem.className = `text-2xl font-bold ${metrics.total_pnl >= 0 ? 'text-delphi-green' : 'text-delphi-red'}`;
+            }
+        }
+
+        async function checkSystemStatus() {
+            try {
+                const response = await fetch('/api/system/status', {
+                });
+                const data = await response.json();
+                updateSystemStatus(data.status);
+            } catch (error) {
+                console.error('Failed to check status:', error);
+            }
+
+            setTimeout(checkSystemStatus, 10000);
+        }
+
+        // Utility
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function logout() {
+            document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

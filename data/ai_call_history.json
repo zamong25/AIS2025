@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-07-13T11:46:33.864805",
+    "type": "trigger",
+    "trigger_info": {
+      "trigger": {
+        "trigger_id": "mdd_TEST_001",
+        "trigger_type": "position",
+        "condition_type": "mdd",
+        "threshold_percent": -3.0,
+        "urgency": "high"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-13T11:55:40.973337",
+    "type": "test",
+    "trigger_info": {
+      "test": true
+    }
+  }
+]

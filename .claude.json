@@ -1,0 +1,91 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\PCW\\Desktop\\delphi-trader"
+      ]
+    },
+    "aws-services": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@rishikavikondala/mcp-server-aws"
+      ]
+    },
+    "dynamodb": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@imankamyabi/dynamodb-mcp-server"
+      ]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@hannesrudolph/sqlite-explorer-fastmcp-mcp-server"
+      ],
+      "env": {
+        "DATABASE_PATH": "C:\\Users\\PCW\\Desktop\\delphi-trader\\delphi_trading.db"
+      }
+    },
+    "crypto-data": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@nayshins/mcp-server-ccxt"
+      ]
+    },
+    "web-fetch": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@kazuph/mcp-fetch"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": ""
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    },
+    "jupyter": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@datalayer/jupyter-mcp-server"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "mcp-inspector": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@modelcontextprotocol/inspector"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_034816",
+    "entry_time": "2025-07-16T03:48:16.005422",
+    "direction": "SHORT",
+    "entry_price": 163.0,
+    "entry_reason": "모든 주요 시간대(1D, 1H) 차트가 하락 추세를 가리키고 있으며, 15분 및 1시간 차트의 165달러 부근에서 Lux Algo의 강력한 매도 신호(큰 빨간 점)가 포착되었다. 반등 구간의 거래량이 점차 감소하는 것은 매수세의 약화를 명확히 보여준다. 에이전트들의 분석 또한 하락 시나리오를 강력히 지지하여 내 판단과 일치한다.",
+    "primary_scenario": "현재의 단기 반등은 더 큰 하락 추세를 이어가기 위한 되돌림에 불과하다. 165달러 저항선에서 매도 압력이 확인되었으므로, 가격은 이전 지지선인 161달러를 하향 이탈하여 최종적으로 158달러 및 그 이하로 하락할 것이다.",
+    "target_price": 158.5,
+    "stop_loss": 165.2,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

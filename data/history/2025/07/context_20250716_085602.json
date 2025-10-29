@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_234054",
+    "entry_time": "2025-07-15T23:40:54.752676",
+    "direction": "SHORT",
+    "entry_price": 164.5,
+    "entry_reason": "내 차트 분석이 최우선이다. 1D 차트의 명백한 하락 추세, 5M/15M/1H 차트의 과매수 오실레이터 및 저항대 도달, 그리고 상승 중 거래량 감소라는 결정적 증거를 확인했다. 이는 상승 동력의 소진을 의미하며, 에이전트들의 하락 시나리오와도 일치한다.",
+    "primary_scenario": "일봉상 하락 추세 속에서 단기 과매수 구간에 진입하며 165달러 저항선에서 거부당할 것을 예상한다. 이 저항을 확인한 후 가격은 다시 162달러 지지선, 나아가 160달러대까지 하락할 것이다.",
+    "target_price": 162.5,
+    "stop_loss": 165.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

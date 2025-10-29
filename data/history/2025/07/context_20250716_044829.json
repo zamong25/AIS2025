@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_193322",
+    "entry_time": "2025-07-15T19:33:22.122486",
+    "direction": "SHORT",
+    "entry_price": 162.5,
+    "entry_reason": "1D/1H 차트의 명확한 하락 추세와 5M/15M 차트에서 나타나는 상승 모멘텀 소진 및 저항대 도달이라는 다중 시간대 분석이 일치한다. 낮은 거래량을 동반한 반등은 신뢰도가 낮으며, 이는 하락 포지션 진입에 유리한 환경을 제공한다.",
+    "primary_scenario": "현재의 단기 상승은 더 큰 하락 추세를 이어가기 위한 일시적 반등(Bull Trap)일 가능성이 높다. 163.50달러 저항선을 돌파하지 못하고, 매도 압력에 밀려 주요 지지선인 160.00달러, 나아가 156.00달러까지 하락할 것으로 예상한다.",
+    "target_price": 160.1,
+    "stop_loss": 164.1,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

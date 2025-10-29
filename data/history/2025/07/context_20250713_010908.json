@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250710_111952",
+    "entry_time": "2025-07-10T11:19:52.706162",
+    "direction": "SHORT",
+    "entry_price": 157.4,
+    "entry_reason": "모든 단기 시간대(5m, 15m) 차트와 오실레이터가 명확한 하락 신호를 보이고 있으며, 이는 일봉의 강력한 저항 구간에서의 반응과 일치한다. 다수 에이전트의 분석 또한 하락 시나리오를 지지하여 신뢰도를 높인다.",
+    "primary_scenario": "가격이 일봉 저항에 막히고 단기 프레임에서 하락으로 구조가 전환되었다. 157.00 지지선이 붕괴되면 다음 주요 지지 레벨인 155.50 ~ 155.00까지 하락할 것으로 예상한다.",
+    "target_price": 155.5,
+    "stop_loss": 158.25,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

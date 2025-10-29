@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_050407",
+    "entry_time": "2025-07-16T05:04:07.455860",
+    "direction": "SHORT",
+    "entry_price": 161.9,
+    "entry_reason": "1. **차트 우선주의**: 1일, 1시간, 15분 차트 모두 Lux Algo 클라우드 하단에 위치하며 명백한 하락 추세를 보이고 있다.\\n2. **에이전트 의견 일치**: 차티스트, 퀀트, 스토익 모두 162.00달러 붕괴 시 숏 포지션 진입의 유효성을 지지한다.\\n3. **촉매제 존재**: 약 22시간 후 예정된 솔라나 네트워크 서비스 중단은 단기적인 가격 하락 압력으로 작용할 가능성이 높다.\\n4. **손익비**: 제시된 진입/손절/익절 계획은 1:1.8 이상의 매력적인 손익비를 제공한다.",
+    "primary_scenario": "현재의 단기 횡보는 하락 추세의 일시적 멈춤으로 판단한다. 162.00달러 지지선이 붕괴되면, 다음 주요 지지선인 160.00달러까지 하락이 가속화될 것으로 예상한다. 곧 있을 네트워크 서비스 중단 이벤트가 하락 촉매제로 작용할 가능성이 높다.",
+    "target_price": 160.2,
+    "stop_loss": 162.8,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

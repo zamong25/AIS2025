@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250713_140854",
+    "entry_time": "2025-07-13T14:08:54.517323",
+    "direction": "SHORT",
+    "entry_price": 161.8,
+    "entry_reason": "차트 분석(상승 쐐기형 패턴), 에이전트 보고서(만장일치 하락 전망), 퀀트 데이터(모멘텀 약화) 등 모든 정보가 하방 돌파를 가리키는 강력한 컨플루언스가 형성되었다.",
+    "primary_scenario": "15분봉의 상승 쐐기형 패턴이 핵심 지지선인 162.00을 하향 돌파하며, 일봉의 거시적 하락 추세에 다시 합류하는 시나리오에 베팅한다. 단기적인 네트워크 불안정성 뉴스가 하락 촉매제로 작용할 수 있다.",
+    "target_price": 159.8,
+    "stop_loss": 163.05,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

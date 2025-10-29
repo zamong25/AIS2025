@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250720_205316",
+    "entry_time": "2025-07-20T20:53:16.463210",
+    "direction": "SHORT",
+    "entry_price": 181.4,
+    "entry_reason": "일봉 차트의 명확한 저항, 모든 단기 차트에서의 모멘텀 약화 신호, Lux Algo 매도 시그널, 그리고 솔라나 네트워크 지연이라는 부정적 뉴스의 결합이 강력한 하락 시나리오를 지지한다.",
+    "primary_scenario": "일봉 저항대에서 힘이 소진되고, 단기적 네트워크 문제와 맞물려 $181.50 지지선이 붕괴될 것이다. 이 붕괴는 추가적인 매도세를 유발하여 $180.00, 나아가 $177.50 레벨까지 하락을 이끌어낼 것으로 예상한다.",
+    "target_price": 180.1,
+    "stop_loss": 182.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

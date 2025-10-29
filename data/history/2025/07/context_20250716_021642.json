@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_170135",
+    "entry_time": "2025-07-15T17:01:35.181953",
+    "direction": "SHORT",
+    "entry_price": 161.5,
+    "entry_reason": "1D/1H 차트의 명확한 하락 추세, 5M/15M 차트의 상승 모멘텀 약화 및 매도 신호 출현, 모든 에이전트의 하락 편향적 분석, 그리고 단기 악재(네트워크 지연)가 결합되어 하방 베팅의 확률적 우위를 제공합니다.",
+    "primary_scenario": "현재 가격대는 상위 시간대의 하락 추세에 순응하는 매력적인 숏 포지션 진입 구간입니다. $162.50 저항을 넘지 못하고, 임박한 네트워크 불안정성 뉴스를 촉매 삼아 주요 지지선인 $158.00, 나아가 $155.50까지 하락할 것으로 예상합니다.",
+    "target_price": 158.0,
+    "stop_loss": 163.1,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

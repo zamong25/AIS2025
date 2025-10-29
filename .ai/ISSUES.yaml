@@ -1,0 +1,87 @@
+# 델파이 트레이더 이슈 트래커
+# 마지막 업데이트: 2025-01-21 11:15
+
+issues:
+  critical:
+    - id: "SEC-001"
+      title: "하드코딩된 민감 정보"
+      description: "Discord 웹훅, 대시보드 비밀번호 노출"
+      locations:
+        - "bridge.py:896"
+        - "src/utils/discord_notifier.py:29"
+        - "src/dashboard/app.py:51,60"
+      impact: "보안 위험"
+      status: "resolved"
+      resolved_date: "2025-01-21"
+      solution: ".env 파일로 이동 및 환경변수 사용"
+      
+  high:
+    - id: "PERF-001"
+      title: "성능 저하"
+      description: "새 시스템이 24% 느림"
+      reason: "도메인 모델 생성 오버헤드"
+      status: "open"
+      
+    - id: "ISSUE-002"
+      title: "매직 넘버 하드코딩"
+      description: "200개, 0.1%, 5분 등"
+      locations:
+        - "src/agents/quant_v3.py"
+        - "src/data/binance_connector.py"
+      status: "open"
+      
+    - id: "BIAS-001"
+      title: "숏 포지션 편향"
+      description: "최근 16개 거래 중 15개가 SHORT (93.8%)"
+      cause: "에이전트 편향 및 프롬프트 문제"
+      status: "open"
+      
+    - id: "LOSS-001"
+      title: "승률 0%"
+      description: "16개 거래 모두 손실"
+      cause: "진입/청산 타이밍 부적절"
+      status: "open"
+      
+  medium:
+    - id: "DASH-001"
+      title: "대시보드 랜덤 데이터"
+      description: "실제 데이터 대신 랜덤값 사용"
+      impact: "정확한 성과 확인 불가"
+      status: "open"
+      
+    - id: "TRIG-001"
+      title: "트리거 시스템 비효율"
+      description: "15분 주기 체크, 0.1% 타이트한 조건"
+      impact: "재진입 기회 상실"
+      status: "open"
+      
+    - id: "NOTIF-001"
+      title: "디스코드 알림 정보 부족"
+      description: "포지션 정보 미표시"
+      needed: "진입가, 손익, 손절/익절가 표시"
+      status: "open"
+      
+resolved:
+  - id: "DB-001"
+    title: "이중화된 데이터베이스 시스템"
+    resolved_date: "2025-01-13"
+    
+  - id: "LEGACY-001"
+    title: "레거시 Cross Validator 시스템"
+    resolved_date: "2025-01-13"
+    
+  - id: "POS-001"
+    title: "position_decision 논리 오류"
+    resolved_date: "2025-01-13"
+    
+  - id: "ORDER-001"
+    title: "ADJUST_STOP 시 익절가 사라짐"
+    resolved_date: "2025-01-13"
+    
+  - id: "TRADE-001"
+    title: "거래 실행 상태 처리 누락"
+    resolved_date: "2025-01-13"
+    
+  - id: "PENDING-001"
+    title: "PENDING 거래 경고"
+    resolved_date: "2025-01-13"

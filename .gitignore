@@ -1,0 +1,108 @@
+# 환경 설정
+.env
+config/.env
+
+# 가상환경
+venv/
+new_venv/
+simple_venv/
+test_venv/
+*.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 로그
+logs/*.log
+*.log
+
+# 데이터베이스
+*.db
+*.sqlite
+*.sqlite3
+
+# 데이터 파일 (거래 데이터, 로그 등)
+data/*.json
+data/database/
+data/history/
+data/logs/
+data/screenshots/
+nohup.out
+
+# AI 작업 공간
+.ai/workspace/
+
+# 임시 파일
+temporary/
+temp/
+tmp/
+*.tmp
+*.temp
+
+# 백업
+backup/
+backups/
+src/dashboard_backup_*/
+*.bak
+*.backup
+*.tar.gz
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 보안
+cookies.json
+*.key
+*.pem
+*.cert
+
+# 테스트
+.coverage
+.pytest_cache/
+htmlcov/
+
+# 기타
+*.pid
+*.seed
+*.pid.lock
+.cache
+# 대용량 백업 파일
+backups/
+src/dashboard_backup_*/
+*.tar.gz
+*.zip
+reports/

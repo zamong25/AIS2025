@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_201057",
+    "entry_time": "2025-07-15T20:10:57.927646",
+    "direction": "SHORT",
+    "entry_price": 157.8,
+    "entry_reason": "내 독립적인 차트 분석 결과 모든 타임프레임에서 강력한 하락 동조화가 나타난다. 이는 모든 에이전트의 보고서(차티스트, 퀀트, 스토익)와 일치하며, 특히 7시간 내로 예정된 '솔라나 네트워크 부분 중단'이라는 명확한 부정적 이벤트가 나의 숏 포지션 진입 결정을 뒷받침하는 결정적 근거다.",
+    "primary_scenario": "현재 가격은 주요 저항선인 $160-162 구간 아래에서 약세 조정을 보이고 있다. 임박한 네트워크 중단이라는 부정적 촉매제가 작용하여 $158 지지선을 하향 돌파하고, 다음 주요 지지선인 $155 구간까지 하락이 가속화될 것으로 예상한다.",
+    "target_price": 155.5,
+    "stop_loss": 159.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

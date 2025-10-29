@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250709_160425",
+    "entry_time": "2025-07-09T16:04:25.105572",
+    "direction": "SHORT",
+    "entry_price": 153.94,
+    "entry_reason": "1D 차트의 하락 추세, 1H/15M/5M 차트에서 $155 주요 저항선에 대한 반복된 실패 및 모멘텀 약화(거래량 감소, 오실레이터 다이버전스). 모든 에이전트 보고서가 직간접적으로 하락 또는 횡보 가능성을 지지함.",
+    "primary_scenario": "$155 저항을 돌파하지 못하고 상승 동력이 소진될 것이다. 이후 매도 압력이 우세해지며 가격은 단기 박스권 하단인 $150 부근까지 하락할 것이다.",
+    "target_price": 151.5,
+    "stop_loss": 155.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

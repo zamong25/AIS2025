@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_052245",
+    "entry_time": "2025-07-16T05:22:45.793470",
+    "direction": "SHORT",
+    "entry_price": 160.9,
+    "entry_reason": "내 차트 분석 결과, 모든 주요 시간대(1D, 1H, 15M)에서 하락 우위가 명확하다. 특히 165달러 저항선에서의 거부는 강력한 매도 신호다. 차티스트와 스토익의 하락 시나리오가 내 분석과 일치하며, 퀀트 또한 모멘텀 약화를 지적하여 하락 가능성을 뒷받침한다. 리스크 대비 보상 비율이 1:3 이상으로 매우 매력적인 진입 기회다.",
+    "primary_scenario": "현재 가격대는 일봉상 하락 추세의 연장선상에 있으며, 165~168달러 구간의 저항을 돌파하지 못하고 힘이 약해진 상태다. 거래량이 감소하며 161달러 지지선을 테스트하고 있으며, 이 지지선이 붕괴될 경우 다음 주요 지지선인 155달러까지 하락할 가능성이 높다고 본다.",
+    "target_price": 157.0,
+    "stop_loss": 162.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

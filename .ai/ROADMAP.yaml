@@ -1,0 +1,108 @@
+# 델파이 트레이더 로드맵
+# 마지막 업데이트: 2025-01-21 11:20
+
+roadmap:
+  immediate: # 즉시 (1-2주)
+    - task: "프로젝트 구조 일관성 정리"
+      priority: "critical"
+      status: "in_progress"
+      details:
+        - "src → legacy/src 이동 완료"
+        - "bridge.py import 경로 수정 완료"
+        - "main.py import 경로 확인 완료"
+        - "테스트 및 검증 필요"
+      
+    - task: "보안 강화"
+      priority: "critical"
+      status: "pending"
+      details:
+        - "Discord 웹훅 환경변수로"
+        - "대시보드 비밀번호 .env 파일로"
+        - "API 키 모두 환경변수로"
+      
+    - task: "성능 최적화"
+      priority: "critical"
+      status: "pending"
+      details:
+        - "도메인 모델 생성 오버헤드 분석"
+        - "캡싱 전략 구현"
+        - "비동기 처리 개선"
+        
+  short_term: # 단기 (1-2개월)
+    - task: "레거시 코드 제거"
+      priority: "high"
+      details:
+        - "legacy/src 폴더 완전 제거"
+        - "모든 기능 새 시스템으로 이전"
+        
+    - task: "시스템 전환"
+      priority: "high"
+      details:
+        - "USE_NEW_SYSTEM=true 기본값으로"
+        - "브릿지 코드 제거"
+        
+    - task: "LONG/SHORT 편향 해결"
+      priority: "high"
+      details:
+        - "에이전트 프롬프트 균형화"
+        - "시장 분류 시스템 구현"
+        
+  medium_term: # 중기 (3-6개월)
+    - task: "학습 시스템 구현"
+      priority: "medium"
+      details:
+        - "실제 거래 결과 기반 학습"
+        - "에이전트 성능 지표 추적"
+        
+    - task: "대시보드 실제 데이터 연동"
+      priority: "medium"
+      details:
+        - "랜덤 데이터 제거"
+        - "실시간 성과 모니터링"
+        
+    - task: "테스트 커버리지 80% 달성"
+      priority: "medium"
+      details:
+        - "단위 테스트 보강"
+        - "통합 테스트 자동화"
+        
+  long_term: # 장기 (6개월+)
+    - task: "멀티 거래소 지원"
+      priority: "low"
+      details:
+        - "Bybit, OKX 등 추가"
+        
+    - task: "멀티 자산 거래"
+      priority: "low"
+      details:
+        - "BTC, ETH 등 다른 암호화폐"
+        
+    - task: "클라우드 배포"
+      priority: "low"
+      details:
+        - "AWS/GCP 기반 인프라"
+        - "오토스케일링"
+
+metrics:
+  success_criteria:
+    - "함수 평균 길이 < 30줄"
+    - "테스트 커버리지 > 80%"
+    - "하드코딩 값 = 0"
+    - "AI 세션 시작 시간 < 5분"
+    - "신규 기능 추가 시간 50% 감소"
+    - "승률 > 50%"
+    - "LONG/SHORT 비율 40-60% 범위"
+    
+  current_metrics:
+    function_avg_length: 35  # 새 시스템 30줄 이하
+    test_coverage: 60  # 새 시스템만
+    hardcoded_values: 50  # 레거시에 잔존
+    ai_session_startup: 3  # 분
+    feature_addition_time: "2x"  # 이전 대비
+    win_rate: 0  # 16개 거래 모두 손실
+    long_short_ratio: "6.3% / 93.7%"  # 극심한 편향
+
+notes: |
+  - 즉시 해결 필요: 보안 이슈, 성능 문제
+  - 단기 목표: 시스템 안정화 및 편향 해결
+  - 장기 비전: 완전 자동화된 멀티 자산 거래 시스템

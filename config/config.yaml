@@ -1,0 +1,133 @@
+# 델파이 트레이딩 시스템 설정 파일
+
+# 시스템 기본 설정
+system:
+  name: "Delphi Trading System"
+  version: "3.0"
+  environment: "production"  # production, development, testnet
+  log_level: "INFO"
+
+# 데이터베이스 설정
+database:
+  path: "data/database/delphi_trades.db"
+  wal_mode: true
+  timeout: 30
+
+# 리포팅 설정
+reporting:
+  enabled: true
+  schedule:
+    daily_hour: 23  # 23시 (UTC)
+    weekly_day: 6   # 일요일 (0=월요일, 6=일요일)
+  storage:
+    base_path: "reports"
+    keep_days: 90
+  discord:
+    enabled: true
+    daily_reports: true
+    weekly_reports: true
+
+# 알림 설정
+notifications:
+  discord:
+    enabled: true
+    webhook_url: "${DISCORD_WEBHOOK_URL}"
+    username: "델파이 알림봇"
+    rate_limit:
+      max_per_minute: 10
+      dedup_minutes: 5
+
+# 거래 설정
+trading:
+  initial_capital: 100  # USDT
+  max_leverage: 20
+  max_simultaneous_positions: 1
+  target_asset: "SOLUSDT"
+  
+  # 리스크 관리
+  risk_management:
+    max_loss_per_trade_percent: 2.0  # 거래당 최대 손실률 (기존 1.5%에서 2.0%로 상향)
+    min_rr_ratio: 1.2  # 최소 위험/보상 비율
+    min_expectancy: -0.05  # 최소 기대값
+    
+    # ATR 기반 동적 손절
+    use_atr_stops: true  # ATR 기반 손절 사용 여부
+    atr_period: 14  # ATR 계산 기간
+    atr_timeframe: '15m'  # ATR 계산 시간대
+    
+    # 레버리지별 최소 손절 거리
+    min_stop_distances:
+      1: 1.0    # 1배 레버리지: 최소 1%
+      3: 0.5    # 3배 레버리지: 최소 0.5%
+      5: 0.4    # 5배 레버리지: 최소 0.4%
+      10: 0.3   # 10배 레버리지: 최소 0.3%
+      20: 0.25  # 20배 레버리지: 최소 0.25%
+    
+  # 신디사이저 기준
+  synthesizer:
+    momentum_exception_chartist_threshold: 75
+    momentum_exception_journalist_threshold: 7
+    momentum_exception_min_rr: 1.0
+
+# AI 에이전트 설정
+agents:
+  model: "gemini-2.5-flash"
+  timeout: 300  # 초
+  retries: 3
+  
+  # 프롬프트 파일 경로
+  prompts:
+    chartist: "prompts/chartist_final.txt"
+    journalist: "prompts/journalist_final.txt"
+    quant: "prompts/quant_final.txt"
+    stoic: "prompts/stoic_final.txt"
+    synthesizer: "prompts/synthesizer_final.txt"
+
+# 데이터 소스 설정
+data:
+  chart_images:
+    - "screenshots/chart_5m.png"
+    - "screenshots/chart_15m.png"
+    - "screenshots/chart_1H.png"
+    - "screenshots/chart_1D.png"
+  
+  binance:
+    interval: "1h"
+    limit: 500
+  
+  # 외부 API
+  external_apis:
+    coingecko:
+      btc_dominance_url: "https://api.coingecko.com/api/v3/global"
+      timeout: 10
+
+# 데이터베이스 설정
+database:
+  sqlite_path: "delphi_trades.db"
+  backup_interval_hours: 24
+
+# 알림 설정
+notifications:
+  discord:
+    enabled: true
+    webhook_url: "${DISCORD_WEBHOOK_URL}"  # 환경변수에서 가져옴
+    username: "델파이 알림봇"
+  
+  email:
+    enabled: false  # Discord로 대체
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    recipients: ["wool2503@gmail.com"]
+  
+  emergency_conditions:
+    daily_loss_percent: 5.0
+    consecutive_losses: 5
+    system_error_count: 3
+
+# 성능 최적화 설정
+performance:
+  gemini_client_reuse: true
+  image_cache_enabled: true
+  api_rate_limit_delay: 1  # 초

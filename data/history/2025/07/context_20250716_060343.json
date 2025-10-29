@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_204836",
+    "entry_time": "2025-07-15T20:48:36.240986",
+    "direction": "SHORT",
+    "entry_price": 158.9,
+    "entry_reason": "나의 차트 분석 결과 1시간봉의 명확한 하락 추세가 확인되었고, 모든 에이전트 보고서가 일관되게 하락 시나리오를 지지한다. 특히 단기 반등 시 거래량이 현저히 부족한 점과 단기 부정적 뉴스가 임박했다는 점이 내 결정의 핵심 근거다.",
+    "primary_scenario": "현재의 단기 상승은 1시간봉 하락 추세에 대한 힘없는 기술적 반등으로 판단한다. 이 반등은 162달러 부근의 저항을 넘지 못하고, 핵심 지지선인 159달러가 붕괴되면서 156달러 레벨까지 하락이 재개될 것이다. 약 6시간 후 예정된 네트워크 불안정성 뉴스가 이 하락의 촉매제가 될 수 있다.",
+    "target_price": 156.5,
+    "stop_loss": 160.2,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

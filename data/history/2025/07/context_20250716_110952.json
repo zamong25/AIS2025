@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_015444",
+    "entry_time": "2025-07-16T01:54:44.311012",
+    "direction": "SHORT",
+    "entry_price": 164.2,
+    "entry_reason": "모든 타임프레임(1D, 1H, 15M, 5M)에서 하락 관점이 일치하며, 특히 5분봉 Lux Algo 오실레이터가 과매수 구간에서 하락 교차하는 결정적 신호를 포착했다. 모든 에이전트 보고서가 하락 시나리오를 지지하여 확신을 더한다.",
+    "primary_scenario": "일봉 하락 추세에 순응하는 전략. 단기 상승 파동이 165달러 저항 구간에서 힘을 잃고 5분봉에서 매도 신호가 발생했다. 이제 가격은 주요 지지선인 160달러를 향해 하락할 것으로 예상한다.",
+    "target_price": 161.5,
+    "stop_loss": 165.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

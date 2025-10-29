@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_070627",
+    "entry_time": "2025-07-15T07:06:27.187947",
+    "direction": "SHORT",
+    "entry_price": 159.3,
+    "entry_reason": "일봉 및 시간봉의 명확한 하락 추세가 주된 근거. 단기 차트(5분, 15분)의 반등이 주요 저항 구간 및 이동평균선 저항에 막히는 모습을 보이고 있으며, 모든 에이전트 보고서가 하락 시나리오의 우위를 지지하고 있어 확신을 더한다.",
+    "primary_scenario": "현재의 단기 상승은 161.50달러 부근의 저항을 넘지 못하는 약한 조정으로 판단한다. 이 저항대에서 매도 압력이 다시 우세해지며, 주요 지지선인 159.50달러를 하향 돌파하여 158.00달러 지지선까지 하락하는 시나리오를 예상한다.",
+    "target_price": 158.0,
+    "stop_loss": 160.0,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

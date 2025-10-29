@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_210729",
+    "entry_time": "2025-07-15T21:07:29.000454",
+    "direction": "SHORT",
+    "entry_price": 159.9,
+    "entry_reason": "차트 우선주의 원칙에 따라, 모든 시간대의 차트가 일관된 하락 신호를 보내고 있다. Lux Algo 오실레이터 또한 주요 시간대에서 매도 우위를 나타내고 있으며, 차티스트와 스토익의 하락 시나리오 분석이 나의 관점과 일치한다. 내일 예정된 네트워크 불안정성 뉴스는 하방 압력을 가중시킬 수 있는 촉매제다.",
+    "primary_scenario": "현재 가격은 1일, 1시간, 15분봉 모두에서 뚜렷한 하락 추세 내에 있다. 162.50달러에서 저항을 확인한 후 160달러 부근에서 약하게 횡보 중이며, 이는 추가 하락을 위한 에너지 응축 과정으로 보인다. 160달러 지지선이 붕괴되면 다음 주요 지지선인 158달러까지 빠르게 하락할 것으로 예상한다.",
+    "target_price": 158.1,
+    "stop_loss": 161.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

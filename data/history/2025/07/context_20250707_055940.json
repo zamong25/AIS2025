@@ -1,0 +1,34 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250706_202529",
+    "entry_time": "2025-07-06T20:25:29.481761",
+    "direction": "SHORT",
+    "entry_price": 151.59,
+    "entry_reason": "탐험 모드 ULTRA_SAFE: 초안전 모드 - 최소 포지션으로 시스템 검증 (거래 7/50)",
+    "primary_scenario": "",
+    "target_price": 0,
+    "stop_loss": 0,
+    "invalidation_condition": "가격이 $156.50 이상으로 강하게 돌파하고 지지받을 경우, 또는 $146.00 이하로 하락하여 지지받지 못할 경우.",
+    "invalidation_price": 156.5,
+    "key_levels": [
+      146.0,
+      150.0,
+      152.0,
+      154.0
+    ],
+    "key_events": [
+      "솔라나 개발자 컨퍼런스(Breakpoint) 개최 및 주요 로드맵 발표 (2025-07-10)",
+      "솔라나 기반 주요 DeFi 프로토콜의 대규모 업데이트 (2025-07-12)",
+      "미국 소비자 물가 지수(CPI) 발표 (2025-07-15)"
+    ],
+    "initial_confidence": 30,
+    "initial_agent_scores": {
+      "chartist": 40,
+      "journalist": 7,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "12-48시간"
+  },
+  "history": []
+}

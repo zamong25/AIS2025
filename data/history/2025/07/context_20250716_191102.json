@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_095554",
+    "entry_time": "2025-07-16T09:55:54.926701",
+    "direction": "SHORT",
+    "entry_price": 167.5,
+    "entry_reason": "내 차트 분석(단기 과매수, 장기 저항)과 모든 에이전트(차티스트, 퀀트, 저널리스트, 스토익)의 하락 시나리오 선호가 완벽하게 일치한다. 리스크 대비 보상 비율이 매우 매력적인 구간이다.",
+    "primary_scenario": "단기 상승 파동이 1시간 및 일봉의 강력한 저항대($168-$170)에서 힘을 잃고, 과매수 지표와 부정적 단기 뉴스로 인해 조정 국면에 진입할 것이다. 목표는 이전 지지 레벨인 $163 구간으로의 회귀다.",
+    "target_price": 163.0,
+    "stop_loss": 168.6,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

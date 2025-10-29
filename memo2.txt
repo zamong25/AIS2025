@@ -1,0 +1,89 @@
+025-10-29 01:14:11,510 [INFO] [DelphiOrchestrator] 💬 신디사이저 결정 Discord 알림 발송 완료 2025-10-29 01:14:11,513 [INFO] [DelphiOrchestrator] === [거래 실행] 신디사이저 플레이북 실행 시작 === 2025-10-29 01:14:11,514 [INFO] [trading.trade_executor] 📊 신디사이저 결정: HOLD_POSITION - 현재 포지션 유지 2025-10-29 01:14:11,516 [ERROR] [DelphiOrchestrator] ❌ [거래 실행] 완료 - 실패: 알 수 없는 오류 (상태: hold_position) 왜 이러는거야? 거래실행 실패??
+
+원인 딱 하나예요:
+`trade_executor.execute_synthesizer_playbook()`이 **`status: "hold_position"`**을 돌려주는데, `main.py`의 `_execute_trade()`는 **`"hold"`만 처리**합니다. 그래서 else로 빠지며 “실패” 로그가 찍힌 거예요.
+
+즉, **상태값 불일치**(프로토콜 미스매치) 때문입니다.
+
+---
+
+### 빠른 해결 (main.py만 패치)
+
+`_execute_trade()`에서 반환 상태를 **정규화**해서 처리하세요. (사용자 취향상 “수정 부분만” 제시)
+
+```python
+# [수정: main.py - _execute_trade() 내부, execute_synthesizer_playbook() 직후]
+
+execution_result = trade_executor.execute_synthesizer_playbook(playbook, reports)
+
+# ▼▼▼ 추가: 상태 정규화 블록
+status_raw = (execution_result or {}).get('status', '')
+status_norm = str(status_raw).strip().lower().replace('-', '_')
+alias = {
+    'hold_position': 'hold',
+    'position_hold': 'hold',
+    'no_action': 'hold',
+    'kept': 'hold',
+}
+status = alias.get(status_norm, status_norm)
+if execution_result is not None:
+    execution_result['status'] = status
+else:
+    execution_result = {'status': 'error', 'error': 'empty execution_result'}
+# ▲▲▲ 여기까지 추가
+
+# 기존 분기 로직은 status 변수만 사용하도록
+if status == 'executed':
+    ...
+elif status == 'closed':
+    ...
+elif status == 'hold':
+    self.logger.info("✅ [거래 실행] 완료 - HOLD 결정으로 거래 실행하지 않음")
+    ...
+elif status in ['adjusted', 'both_adjusted', 'position_adjusted']:
+    ...
+elif status in ['disabled', 'blocked']:
+    ...
+elif status == 'error':
+    self.logger.error(f"❌ [거래 실행] 완료 - 실패: {execution_result.get('error', '알 수 없는 오류')} (상태: {status_raw})")
+else:
+    self.logger.warning(f"⚠️ [거래 실행] 비표준 상태 수신: '{status_raw}' → 정규화 '{status}'")
+```
+
+> 포인트
+>
+> * `hold_position`, `no_action` 등 들어와도 **모두 `hold`로 매핑**
+> * 알 수 없는 상태는 “비표준 상태”로 **경고만** 남기고 끊기지 않게
+
+---
+
+### 근본 해결(권장, 선택): `trade_executor`도 표준화
+
+`trade_executor.execute_synthesizer_playbook()`의 반환을 **항상**
+`executed | closed | hold | adjusted | ...` 중 하나로 보정하세요.
+
+```python
+# trading/trade_executor.py (반환 직전 공통 처리에 추가)
+status = result.get('status', '')
+norm = str(status).strip().lower().replace('-', '_')
+if norm in ('hold_position', 'position_hold', 'no_action', 'kept'):
+    norm = 'hold'
+result['status'] = norm
+return result
+```
+
+---
+
+### 왜 지금 이 시점에 드러났나?
+
+* 신디사이저가 “HOLD 유지”를 내렸고, 그 결정을 트레이드 실행기로 넘기면서 **상태 키워드가 바뀌었기 때문**입니다.
+* 이전엔 `executed/closed`만 주로 발생해서 문제 없었고, `hold_position` 케이스가 처음 맞닥뜨린 것.
+
+---
+
+### 부가 체크 (선택)
+
+* 대시보드에서 “상태 배지” 갱신도 `status`만 보시게 되어 있다면, **정규화 이후 값**을 사용하도록(FE/BE 어디든) 일관화해 두세요.
+* 로그에 원본/정규화 상태 동시 기록(`status_raw`, `status`)은 추후 디버깅에 유용합니다.
+
+이 패치만 넣으면 방금 같은 “실패” 로그는 사라지고, HOLD 루틴(트리거 세팅 등)이 정상 동작합니다.

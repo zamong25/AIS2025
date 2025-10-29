@@ -1,0 +1,106 @@
+{
+  "active_triggers": [
+    {
+      "trigger_id": "mdd_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "mdd",
+      "price": 197.0191994368219,
+      "direction": "UNKNOWN",
+      "threshold_percent": -4.0,
+      "action": "analyze",
+      "urgency": "high",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.316518",
+      "expires_at": "2025-11-05T07:25:21.316518"
+    },
+    {
+      "trigger_id": "emergency_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "emergency",
+      "price": 199.62879915523283,
+      "direction": "UNKNOWN",
+      "threshold_percent": -8.0,
+      "action": "emergency_analyze",
+      "urgency": "critical",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.316518",
+      "expires_at": "2025-11-05T07:25:21.316518"
+    },
+    {
+      "trigger_id": "tp_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "profit",
+      "price": 183.9712008447672,
+      "direction": "UNKNOWN",
+      "threshold_percent": 6.0,
+      "action": "analyze",
+      "urgency": "medium",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.316518",
+      "expires_at": "2025-11-05T07:25:21.316518"
+    },
+    {
+      "trigger_id": "time_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "time",
+      "hours_in_position": 24,
+      "min_movement_percent": 1.0,
+      "action": "analyze",
+      "urgency": "low",
+      "expires_hours": 48,
+      "created_at": "2025-10-29T07:25:21.316518",
+      "expires_at": "2025-10-31T07:25:21.316518"
+    },
+    {
+      "trigger_id": "mdd_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "mdd",
+      "price": 197.0191994368219,
+      "direction": "UNKNOWN",
+      "threshold_percent": -4.0,
+      "action": "analyze",
+      "urgency": "high",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.338030",
+      "expires_at": "2025-11-05T07:25:21.338030"
+    },
+    {
+      "trigger_id": "emergency_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "emergency",
+      "price": 199.62879915523283,
+      "direction": "UNKNOWN",
+      "threshold_percent": -8.0,
+      "action": "emergency_analyze",
+      "urgency": "critical",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.338030",
+      "expires_at": "2025-11-05T07:25:21.338030"
+    },
+    {
+      "trigger_id": "tp_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "profit",
+      "price": 183.9712008447672,
+      "direction": "UNKNOWN",
+      "threshold_percent": 6.0,
+      "action": "analyze",
+      "urgency": "medium",
+      "expires_hours": 168,
+      "created_at": "2025-10-29T07:25:21.338030",
+      "expires_at": "2025-11-05T07:25:21.338030"
+    },
+    {
+      "trigger_id": "time_DELPHI_20251028_222521",
+      "trigger_type": "position",
+      "condition_type": "time",
+      "hours_in_position": 24,
+      "min_movement_percent": 1.0,
+      "action": "analyze",
+      "urgency": "low",
+      "expires_hours": 48,
+      "created_at": "2025-10-29T07:25:21.338030",
+      "expires_at": "2025-10-31T07:25:21.338030"
+    }
+  ]
+}

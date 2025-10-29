@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_061943",
+    "entry_time": "2025-07-16T06:19:43.918841",
+    "direction": "SHORT",
+    "entry_price": 161.9,
+    "entry_reason": "내 차트 분석과 모든 에이전트의 보고서가 '하락' 시나리오에 강력한 일관성을 보이고 있다. 특히 1H, 1D 차트의 명확한 하락 구조와 162.00이라는 분명한 트리거 레벨이 존재하여 리스크 대비 보상이 매력적인 진입 기회다.",
+    "primary_scenario": "1시간봉의 더블탑 패턴 이후 형성된 하락 추세가 지속될 것으로 본다. 현재의 횡보는 162.00 지지선 붕괴를 앞둔 일시적 소강상태이며, 붕괴 시 160.00까지 빠르게 하락할 것이다.",
+    "target_price": 160.5,
+    "stop_loss": 162.8,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_054141",
+    "entry_time": "2025-07-16T05:41:41.126488",
+    "direction": "SHORT",
+    "entry_price": 161.8,
+    "entry_reason": "1. 차트: 1D 하락 추세 및 1H/15M 차트에서 164.50달러 저항 확인 및 거부 반응 명확. \\n2. 뉴스: SEC의 솔라나 기반 프로토콜 조사 및 네트워크 불안정이라는 단기 대형 악재 존재. \\n3. 에이전트 일치: 모든 에이전트가 직간접적으로 하락 시나리오의 우위를 지지하고 있음.",
+    "primary_scenario": "현재 가격은 162-164.50달러의 좁은 박스권에 갇혀 있으나, 상위 시간대의 하락 압력과 오늘 밤 예정된 SEC 관련 악재가 촉매로 작용하여 핵심 지지선인 162달러를 하향 돌파할 것으로 예상한다. 돌파 후에는 주요 지지 구간인 160달러까지 하락이 가속화될 것이다.",
+    "target_price": 160.2,
+    "stop_loss": 162.8,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

@@ -1,0 +1,34 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250706_192926",
+    "entry_time": "2025-07-06T19:29:26.488401",
+    "direction": "SHORT",
+    "entry_price": 151.31,
+    "entry_reason": "탐험 모드 ULTRA_SAFE: 초안전 모드 - 최소 포지션으로 시스템 검증 (거래 6/50)",
+    "primary_scenario": "",
+    "target_price": 0,
+    "stop_loss": 0,
+    "invalidation_condition": "가격이 $147.00 - $147.50 지지 구간을 하향 돌파하고 1H 차트에서 붉은색 구름대 아래로 진입할 경우.",
+    "invalidation_price": 147.0,
+    "key_levels": [
+      147.0,
+      150.5,
+      153.0,
+      155.0
+    ],
+    "key_events": [
+      "솔라나 개발자 커뮤니티 AMA 세션 (주요 개발자 참여) (2025-07-08)",
+      "솔라나 기반 신규 DeFi 프로토콜 런칭 (2025-07-10)",
+      "미국 소비자 물가 지수(CPI) 발표 (2025-07-12)"
+    ],
+    "initial_confidence": 30,
+    "initial_agent_scores": {
+      "chartist": 53,
+      "journalist": 7,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "12-48시간"
+  },
+  "history": []
+}

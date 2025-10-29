@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250709_151534",
+    "entry_time": "2025-07-09T15:15:34.036126",
+    "direction": "UNKNOWN",
+    "entry_price": 153.51,
+    "entry_reason": "모든 시간대 차트에서 하락 신호의 일관성이 확인된다. 특히 1시간 및 15분봉에서 155달러 저항선에서의 강력한 매도 압력(긴 위꼬리, 거래량)이 명확하며, Lux Algo 오실레이터 또한 모든 단기 시간대에서 매도 우위로 전환되었다. 에이전트들의 분석 역시 나의 하락 관점과 일치하여 확신을 더한다.",
+    "primary_scenario": "",
+    "target_price": 0,
+    "stop_loss": 0,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

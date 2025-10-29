@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250716_013552",
+    "entry_time": "2025-07-16T01:35:52.460086",
+    "direction": "SHORT",
+    "entry_price": 165.2,
+    "entry_reason": "나의 차트 우선주의 원칙에 따라, 1시간봉에서 관찰된 명백한 약세 다이버전스가 가장 결정적인 근거다. 이는 차티스트와 퀀트의 하락 시나리오 분석과도 일치하여 확신을 더한다. 상위 시간대의 추세에 순응하는 매매이며, 손익비가 매력적인 진입 구간이다.",
+    "primary_scenario": "현재 가격 움직임은 일봉상 하락 추세에 대한 기술적 반등으로, 165달러 이상의 강력한 저항 구간에서 힘을 잃고 있다. 1시간봉의 약세 다이버전스와 15분봉의 매도 신호를 근거로, 이 저항 구간에서 가격이 하락 반전하여 이전 지지선인 161달러 및 158달러 선까지 회귀할 것으로 예상한다.",
+    "target_price": 161.0,
+    "stop_loss": 166.8,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

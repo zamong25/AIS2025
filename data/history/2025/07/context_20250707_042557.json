@@ -1,0 +1,34 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250706_181438",
+    "entry_time": "2025-07-06T18:14:38.939191",
+    "direction": "SHORT",
+    "entry_price": 152.26,
+    "entry_reason": "탐험 모드 ULTRA_SAFE: 초안전 모드 - 최소 포지션으로 시스템 검증 (거래 5/50)",
+    "primary_scenario": "",
+    "target_price": 0,
+    "stop_loss": 0,
+    "invalidation_condition": "가격이 145.00 달러 아래로 하락하여 15m 차트의 상승 구조(Higher Low)를 깨고 Lux Algo의 초록색 지지 구름대 하단을 이탈할 경우",
+    "invalidation_price": 145.0,
+    "key_levels": [
+      145.0,
+      147.0,
+      153.0,
+      160.0
+    ],
+    "key_events": [
+      "미국 소비자 물가 지수(CPI) 발표 (2025-07-09)",
+      "솔라나 생태계 개발자 컨퍼런스 (주요 파트너십 발표 가능성) (2025-07-12)",
+      "특정 솔라나 기반 대형 NFT 프로젝트의 민팅 시작 (2025-07-15)"
+    ],
+    "initial_confidence": 30,
+    "initial_agent_scores": {
+      "chartist": 80,
+      "journalist": 6,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "12-48시간"
+  },
+  "history": []
+}

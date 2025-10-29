@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250720_131108",
+    "entry_time": "2025-07-20T13:11:08.028626",
+    "direction": "LONG",
+    "entry_price": 182.0,
+    "entry_reason": "차트 우선주의 원칙에 따라, 모든 단기 차트(5m, 15m, 1h)에서 명확한 상승 추세와 구조적 고점 돌파(BOS)가 확인된다. 에이전트들은 1일봉 저항과 뉴스에 과도하게 집중하고 있으나, 실제 가격 움직임은 상승 압력이 훨씬 우세함을 보여준다. 최근 숏 포지션 시도가 계속 실패한 점도 추세에 순응해야 한다는 강력한 증거다.",
+    "primary_scenario": "현재의 강력한 단기 상승 모멘텀이 지속되어, 주요 일봉 저항선인 $185.00을 테스트하러 갈 것으로 예상한다. 에이전트들이 우려하는 저항 및 단기 악재는 이 모멘텀을 즉시 꺾기에는 부족하다고 판단한다.",
+    "target_price": 184.0,
+    "stop_loss": 180.4,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

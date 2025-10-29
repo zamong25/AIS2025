@@ -1,0 +1,55 @@
+# 트레이딩 시스템 설정
+
+# 자본 및 리스크 관리
+capital:
+  initial_capital: 10000.0
+  currency: "USDT"
+
+risk_management:
+  max_positions: 5
+  max_exposure_ratio: 0.8  # 전체 자본의 80%
+  max_loss_per_trade: 0.02  # 거래당 최대 손실 2%
+  max_daily_loss: 0.05  # 일일 최대 손실 5%
+  stop_loss_ratio: 0.02  # 기본 손절 2%
+  take_profit_ratio_1: 0.03  # 첫 번째 익절 3%
+  take_profit_ratio_2: 0.05  # 두 번째 익절 5%
+  partial_close_ratio: 0.5  # 첫 익절 시 50% 청산
+
+# 거래 설정
+trading:
+  default_symbol: "SOLUSDT"
+  default_leverage: 10
+  min_trade_amount: 10.0
+  default_quantity: 10.0  # 임시 기본값, 실제로는 계산해야 함
+  
+# 수수료
+fees:
+  futures_maker_fee: 0.0002  # 0.02%
+  futures_taker_fee: 0.0004  # 0.04%
+  spot_maker_fee: 0.001  # 0.1%
+  spot_taker_fee: 0.001  # 0.1%
+
+# 모니터링
+monitoring:
+  heartbeat_interval_seconds: 300  # 5분
+  max_error_history: 1000
+  performance_history_days: 30
+  
+# 리포팅
+reporting:
+  daily_report_time: "09:00"  # UTC
+  weekly_report_day: "sunday"
+  report_timezone: "Asia/Seoul"
+  
+# 대시보드
+dashboard:
+  session_timeout_hours: 24
+  max_websocket_connections: 100
+  update_interval_seconds: 5
+  
+# 시스템
+system:
+  log_level: "INFO"
+  database_path: "data/database/delphi_trades.db"
+  cache_size_mb: 100
+  worker_threads: 4

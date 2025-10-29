@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250715_214502",
+    "entry_time": "2025-07-15T21:45:02.623824",
+    "direction": "SHORT",
+    "entry_price": 162.8,
+    "entry_reason": "일봉/시간봉의 명확한 하락 추세, 5분봉의 과매수 및 반전 신호, 모든 에이전트의 하락 시나리오 지지, 그리고 네트워크 이슈라는 명백한 부정적 촉매 존재.",
+    "primary_scenario": "현재 가격은 장기 하락 추세 내의 기술적 반등의 정점으로 판단. 163.50 저항선과 솔라나 네트워크 불안정성 뉴스를 맞아 하락세가 재개될 것으로 예상. 1차 목표는 158.50.",
+    "target_price": 158.5,
+    "stop_loss": 164.2,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}

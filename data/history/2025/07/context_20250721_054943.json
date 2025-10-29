@@ -1,0 +1,25 @@
+{
+  "thesis": {
+    "trade_id": "DELPHI_20250720_193706",
+    "entry_time": "2025-07-20T19:37:06.009565",
+    "direction": "SHORT",
+    "entry_price": 180.9,
+    "entry_reason": "내 독자적인 차트 분석과 모든 에이전트(차티스트, 퀀트, 스토익)의 보고서가 '하락' 시나리오의 우위를 명확하게 지목하는 강력한 컨플루언스가 발생했다. 특히 퀀트가 단기 모멘텀 약화를 수치로 증명했고, 차티스트가 핵심 저항 레벨을 정확히 짚어냈다. 이는 높은 확률의 숏 포지션 진입 기회다.",
+    "primary_scenario": "강한 상승 랠리 이후 주요 저항선인 $184에서 명백한 거부 반응을 보이고 있다. 5분, 15분 차트에서 하락을 암시하는 ChoCH 신호와 함께 모멘텀이 급격히 약화되고 있어, $181 지지선 붕괴 시 $179~$177 구간까지의 조정 하락이 발생할 것으로 예상한다.",
+    "target_price": 178.5,
+    "stop_loss": 182.5,
+    "invalidation_condition": "",
+    "invalidation_price": 0,
+    "key_levels": [],
+    "key_events": [],
+    "initial_confidence": 50,
+    "initial_agent_scores": {
+      "chartist": 50,
+      "journalist": 5,
+      "quant": 50,
+      "stoic": 5
+    },
+    "expected_duration": "4-12시간"
+  },
+  "history": []
+}
