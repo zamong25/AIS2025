@@ -1,0 +1,2217 @@
+[
+  {
+    "type": "agent_analysis",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 200.34,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.33,
+        "weak_resistance": 203.99,
+        "weak_support": 198.62,
+        "strong_support": 195.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.62 하향 돌파시",
+          "entry": 198.4,
+          "take_profit": 195.0,
+          "stop_loss": 200.0,
+          "risk_reward_ratio": 1.7,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "15분봉에서 MACD 데드크로스 발생",
+            "RSI 50 이하 약세 지속"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$203.99 상향 돌파시",
+          "entry": 204.2,
+          "take_profit": 207.0,
+          "stop_loss": 202.5,
+          "risk_reward_ratio": 1.4,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "5분봉에서 MACD 골든크로스 발생",
+            "RSI 50 이상 강세 전환"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.62에서 반전 캔들 출현시",
+          "entry": 198.8,
+          "take_profit": 203.0,
+          "stop_loss": 197.5,
+          "risk_reward_ratio": 2.8,
+          "reasoning": [
+            "1H 주요 지지선에서 반등 시도",
+            "RSI 과매도 구간에서 반등",
+            "거래량 감소로 변동성 축소"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $198.62 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198.62는 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T00:15:13.506778"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:13:47+00:00Z",
+      "short_term_news": [
+        {
+          "content": "미국 SEC, 암호화폐 거래소에 대한 새로운 규제 발표 예정",
+          "impact_level": 9,
+          "timing": "내일 오전"
+        },
+        {
+          "content": "솔라나 네트워크, 10월 27일 DDoS 공격으로 2시간 동안 서비스 중단",
+          "impact_level": 8,
+          "timing": "1일 전"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 새로운 파트너십으로 NFT 마켓플레이스 확장 발표",
+          "impact_level": 7,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나, 2025년 11월 대규모 개발자 컨퍼런스 개최 예정",
+          "impact_level": 6,
+          "timing": "다음 달"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "3억 달러",
+        "market_cap_rank": "8위",
+        "developer_activity": "지난 주 120 커밋",
+        "network_stats": "TPS 4,500, 활성 지갑 수 1,200,000"
+      },
+      "summary": "주요 뉴스 2건 포함, 총 4건 분석"
+    },
+    "timestamp": "2025-10-29T00:15:32.179229"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:15:32Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 40.37로 하락세, MACD 히스토그램 상승 중이나 거래량 감소",
+          "15m": "RSI 44.83로 중립, MACD 하락세 가속화, 거래량 급감",
+          "1h": "RSI 47.6로 약세, MACD 전환 중, 거래량 감소"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "5분봉 MACD 개선 신호 있으나 거래량 부족"
+          },
+          "하락": {
+            "verdict": "조건부 지지",
+            "rationale": "15분봉 MACD 데드크로스와 거래량 감소로 하락 가능성"
+          },
+          "박스권": {
+            "verdict": "지지 없음",
+            "rationale": "모든 시간대에서 명확한 횡보 신호 부족"
+          }
+        },
+        "key_signals": {
+          "bullish": "$203.99 상향 돌파 시 상승 전환 가능",
+          "bearish": "$198.62 하향 돌파 시 하락 지속"
+        },
+        "synthesis": "단기적으로 $198.62 지지선 이탈 시 하락 가능성이 높으며, 상승 전환은 거래량 증가와 함께 $203.99 돌파 필요."
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 추세가 여전히 약세",
+        "단기 과열 후 재조정 가능성",
+        "$153 저항선 돌파 실패 시 하락 전환 위험"
+      ],
+      "summary": "거래 신호: 상승 가능성"
+    },
+    "timestamp": "2025-10-29T00:16:10.395337"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "stoic",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:13:47+00:00Z",
+      "current_position_analysis": {
+        "existing": "LONG 0.06 @ $148.88 (PnL: +1.30%)",
+        "transition_strategy": {
+          "recommended_action": "CLOSE_AND_REVERSE",
+          "rationale": "하락 시나리오가 우세하므로 기존 롱 청산 후 숏 진입 권장",
+          "execution_steps": [
+            "1. 기존 LONG 0.06 청산 ($199.68)",
+            "2. 5분 대기 후 시장 재평가",
+            "3. $198.40 하향 돌파 확인 시 숏 진입"
+          ]
+        }
+      },
+      "market_risk_state": {
+        "overall_risk": "HIGH",
+        "volatility": "현재 ATR 0.75% - 정상 범위",
+        "key_concerns": [
+          "SEC 규제 발표 예정",
+          "솔라나 네트워크의 최근 DDoS 공격"
+        ]
+      },
+      "scenario_strategies": [
+        {
+          "scenario": "하락",
+          "probability": 55,
+          "recommendation": "EXECUTE",
+          "quant_support": "조건부 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 이상",
+                "change": 3
+              },
+              {
+                "factor": "퀀트 조건부 지지",
+                "change": 2
+              },
+              {
+                "factor": "하락 추세 일치",
+                "change": 3
+              }
+            ],
+            "final_leverage": 18,
+            "position_size_percent": 22.5
+          },
+          "risk_management": {
+            "entry": 198.4,
+            "stop_loss": 200.0,
+            "stop_percent": 0.8,
+            "take_profit": 195.0,
+            "risk_reward": 1.7,
+            "expected_return_percent": 1.71,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.40 하향 돌파 + 15분봉 확인",
+            "즉시 손절: $200.00 또는 진입가 대비 +0.80%",
+            "부분 익절: $196.50에서 50% 청산"
+          ]
+        },
+        {
+          "scenario": "박스권",
+          "probability": 30,
+          "recommendation": "CONDITIONAL",
+          "quant_support": "지지 없음",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 지지 없음",
+                "change": 0
+              },
+              {
+                "factor": "횡보장 중립",
+                "change": 0
+              }
+            ],
+            "final_leverage": 10,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 198.8,
+            "stop_loss": 197.5,
+            "stop_percent": 0.65,
+            "take_profit": 203.0,
+            "risk_reward": 2.8,
+            "expected_return_percent": 2.11,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.62에서 반전 캔들 출현",
+            "거래량 증가 확인 필수",
+            "기존 롱 포지션과 병합 고려"
+          ]
+        },
+        {
+          "scenario": "상승",
+          "probability": 15,
+          "recommendation": "AVOID",
+          "quant_support": "약한 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 약한 지지",
+                "change": 1
+              },
+              {
+                "factor": "역추세 매매",
+                "change": -3
+              }
+            ],
+            "final_leverage": 8,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 204.2,
+            "stop_loss": 202.5,
+            "stop_percent": 0.83,
+            "take_profit": 207.0,
+            "risk_reward": 1.4,
+            "expected_return_percent": 1.37,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "매우 낮은 확률로 진입 회피 권장",
+            "기존 롱 포지션 유지가 더 유리할 수 있음",
+            "극소량 추가만 고려"
+          ]
+        }
+      ],
+      "event_risks": [
+        {
+          "event": "SEC 규제 브리핑",
+          "date": "내일",
+          "impact": "HIGH",
+          "action": "포지션 50% 축소 권장"
+        }
+      ],
+      "final_decision": {
+        "recommended_scenario": "하락",
+        "confidence_level": "HIGH",
+        "optimal_leverage": 18,
+        "position_size": "총자본의 22.5% (증거금)",
+        "expected_risk": "2.5-3%",
+        "expected_reward": "4.27-5.13%",
+        "position_transition": {
+          "from": "LONG 0.06",
+          "to": "SHORT 405%",
+          "net_exposure_change": "기존 롱 청산 후 숏 405% 노출"
+        },
+        "key_warnings": [
+          "기존 롱 포지션 청산 손실 고려",
+          "손절가 $200.00 철저히 준수",
+          "SEC 브리핑 리스크 모니터링"
+        ]
+      },
+      "summary": "하락 55%, EXECUTE"
+    },
+    "timestamp": "2025-10-29T00:16:47.474835"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.7,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.0,
+        "weak_resistance": 203.0,
+        "weak_support": 198.0,
+        "strong_support": 195.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.00 하향 돌파시",
+          "entry": 197.8,
+          "take_profit": 195.0,
+          "stop_loss": 199.5,
+          "risk_reward_ratio": 1.87,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "1H EMA20 하향 돌파",
+            "RSI 50 이하 약세 + MACD 데드크로스"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$203.00 상향 돌파시",
+          "entry": 203.2,
+          "take_profit": 205.0,
+          "stop_loss": 202.0,
+          "risk_reward_ratio": 1.8,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "5분봉 RSI 30 이하 과매도 후 반등",
+            "MACD 골든크로스 발생 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.00에서 반전 캔들 출현시",
+          "entry": 198.2,
+          "take_profit": 203.0,
+          "stop_loss": 197.0,
+          "risk_reward_ratio": 2.53,
+          "reasoning": [
+            "15분봉 더블바텀 형성",
+            "매물대 집중 구간에서 강한 매수세",
+            "RSI 과매도 구간에서 반등"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $198.00 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198은 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T00:38:14.553273"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:35:29+00:00Z",
+      "short_term_news": [
+        {
+          "content": "솔라나 네트워크, 10월 27일 일시적 장애 발생. 2시간 동안 거래 지연.",
+          "impact_level": 8,
+          "timing": "1일 전"
+        },
+        {
+          "content": "미국 연방준비제도(FOMC) 회의 결과 발표 예정, 시장 변동성 예상.",
+          "impact_level": 7,
+          "timing": "3시간 후"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 주요 금융 기관과의 파트너십 발표. 블록체인 기반 결제 시스템 개발 예정.",
+          "impact_level": 9,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나, 2026년까지 네트워크 확장 로드맵 공개. TPS 2배 증가 목표.",
+          "impact_level": 8,
+          "timing": "이미 발표됨"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "3억 5천만 달러",
+        "market_cap_rank": "9위",
+        "developer_activity": "깃헙 커밋 수 1,200개",
+        "network_stats": "TPS 4,500, 활성 지갑 수 1,200만 개"
+      },
+      "summary": "주요 뉴스 3건 포함, 총 4건 분석"
+    },
+    "timestamp": "2025-10-29T00:38:31.764765"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:38:31Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 34.03으로 과매도 상태, MACD 히스토그램 개선 중이나 거래량 감소",
+          "15m": "RSI 42.11로 중립 접근, MACD 하락 가속화",
+          "1h": "RSI 45.74로 약세 지속, MACD 하락 전환 중"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "5분봉 RSI 과매도 반등 가능성 있으나 거래량 부족"
+          },
+          "하락": {
+            "verdict": "조건부 지지",
+            "rationale": "1시간봉 MACD 하락 전환과 EMA 하향 배열"
+          },
+          "박스권": {
+            "verdict": "지지 없음",
+            "rationale": "모든 시간대에서 명확한 방향성 부재"
+          }
+        },
+        "key_signals": {
+          "bullish": "5분봉 RSI 40 이상 회복 + 거래량 1배 이상 유지",
+          "bearish": "1시간봉 MACD 데드크로스 + RSI 45 이하 유지"
+        },
+        "synthesis": "단기적으로 $198.00 지지선 이탈 시 하락 가능성이 높으며, 상승 전환을 위해서는 거래량 증가와 RSI 회복이 필요"
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 MACD 하락 전환",
+        "거래량 감소로 인한 반등 지속성 부족"
+      ],
+      "summary": "거래 신호: 상승 가능성"
+    },
+    "timestamp": "2025-10-29T00:38:54.548787"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "stoic",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:35:29+00:00Z",
+      "current_position_analysis": {
+        "existing": "SHORT 16.92 @ $198.50 (PnL: -0.31%)",
+        "transition_strategy": {
+          "recommended_action": "HOLD_AND_MONITOR",
+          "rationale": "하락 시나리오가 우세하므로 기존 숏 포지션 유지 권장",
+          "execution_steps": [
+            "1. $198.00 하향 돌파 여부 지속 모니터링",
+            "2. $199.50 손절가 철저히 준수",
+            "3. $195.00 목표가 도달 시 부분 청산 고려"
+          ]
+        }
+      },
+      "market_risk_state": {
+        "overall_risk": "MODERATE",
+        "volatility": "현재 ATR 0.75% - 정상 범위",
+        "key_concerns": [
+          "FOMC 회의 결과 발표로 인한 변동성 증가 가능성",
+          "솔라나 네트워크 장애로 인한 신뢰도 하락"
+        ]
+      },
+      "scenario_strategies": [
+        {
+          "scenario": "하락",
+          "probability": 55,
+          "recommendation": "EXECUTE",
+          "quant_support": "조건부 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 이상",
+                "change": 3
+              },
+              {
+                "factor": "퀀트 조건부 지지",
+                "change": 2
+              },
+              {
+                "factor": "하락 추세 일치",
+                "change": 3
+              }
+            ],
+            "final_leverage": 18,
+            "position_size_percent": 22.5
+          },
+          "risk_management": {
+            "entry": 197.8,
+            "stop_loss": 199.5,
+            "stop_percent": 0.86,
+            "take_profit": 195.0,
+            "risk_reward": 1.87,
+            "expected_return_percent": 1.42,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.00 하향 돌파 + 15분봉 확인",
+            "즉시 손절: $199.50 또는 진입가 대비 +0.86%",
+            "부분 익절: $196.00에서 50% 청산"
+          ]
+        },
+        {
+          "scenario": "박스권",
+          "probability": 30,
+          "recommendation": "CONDITIONAL",
+          "quant_support": "지지 없음",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 지지 없음",
+                "change": 0
+              },
+              {
+                "factor": "횡보장 중립",
+                "change": 0
+              }
+            ],
+            "final_leverage": 10,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 198.2,
+            "stop_loss": 197.0,
+            "stop_percent": 0.61,
+            "take_profit": 203.0,
+            "risk_reward": 2.53,
+            "expected_return_percent": 2.42,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.00에서 반전 캔들 출현 시",
+            "거래량 증가 확인 필수",
+            "기존 포지션과 병합 고려"
+          ]
+        },
+        {
+          "scenario": "상승",
+          "probability": 15,
+          "recommendation": "AVOID",
+          "quant_support": "약한 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 약한 지지",
+                "change": 1
+              },
+              {
+                "factor": "역추세 매매",
+                "change": -3
+              }
+            ],
+            "final_leverage": 8,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 203.2,
+            "stop_loss": 202.0,
+            "stop_percent": 0.59,
+            "take_profit": 205.0,
+            "risk_reward": 1.8,
+            "expected_return_percent": 0.89,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "매우 낮은 확률로 진입 회피 권장",
+            "기존 숏 포지션 유지가 더 유리할 수 있음",
+            "극소량 추가만 고려"
+          ]
+        }
+      ],
+      "event_risks": [
+        {
+          "event": "FOMC 회의 결과 발표",
+          "date": "3시간 후",
+          "impact": "HIGH",
+          "action": "포지션 50% 축소 권장"
+        }
+      ],
+      "final_decision": {
+        "recommended_scenario": "하락",
+        "confidence_level": "HIGH",
+        "optimal_leverage": 18,
+        "position_size": "총자본의 22.5% (증거금)",
+        "expected_risk": "2.5-3%",
+        "expected_reward": "4.8-5.76%",
+        "position_transition": {
+          "from": "SHORT 16.92",
+          "to": "SHORT 378.36% 노출",
+          "net_exposure_change": "기존 숏 유지 및 추가 숏 진입"
+        },
+        "key_warnings": [
+          "기존 숏 포지션 손절가 $199.50 철저히 준수",
+          "FOMC 회의 결과 발표로 인한 변동성 주의",
+          "진입 조건 확인 필수"
+        ]
+      },
+      "summary": "하락 55%, EXECUTE"
+    },
+    "timestamp": "2025-10-29T00:40:54.516262"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "synthesizer",
+    "analysis": {
+      "analysis_summary": {
+        "chart_view": "현재 가격은 주요 지지선인 $198.00 근처에서 거래되고 있으며, 하락 압력이 지속되고 있습니다.",
+        "market_state": "하락",
+        "key_levels": {
+          "current_price": 198.84,
+          "resistance": 203.0,
+          "support": 198.0
+        }
+      },
+      "position_check": {
+        "has_position": true,
+        "current_position": "SHORT @ 198.50",
+        "pnl_percent": -0.31,
+        "position_decision": "HOLD_POSITION"
+      },
+      "final_decision": {
+        "action": "HOLD_POSITION",
+        "confidence": 80,
+        "scenario": "현재 하락 추세가 유지되고 있으며, $198.00 지지선 이탈 시 추가 하락 가능성이 높습니다.",
+        "rationale": "차트와 에이전트 보고서 모두 하락 시나리오를 지지하고 있으며, MACD와 RSI 지표도 약세를 나타내고 있습니다."
+      },
+      "execution_plan": {
+        "order_type": "LIMIT",
+        "entry_price": 198.5,
+        "stop_loss": 199.5,
+        "take_profit_1": 196.0,
+        "take_profit_2": 195.0,
+        "position_size_percent": 22.5,
+        "leverage": 18,
+        "risk_amount": "총자본의 2%"
+      },
+      "adjustment_plan": {
+        "current_size": 16.92,
+        "target_size": 16.92,
+        "new_stop_loss": 198.5,
+        "rationale": "현재 포지션을 유지하며 $198.00 지지선 이탈 여부를 모니터링합니다."
+      },
+      "chart_insights": {
+        "lux_algo_signal": "Lux Algo 오실레이터는 하락 신호를 강하게 나타내고 있습니다.",
+        "hidden_pattern": "1시간봉에서 MACD 데드크로스가 발생하여 하락 가능성을 강화합니다.",
+        "volume_story": "거래량이 감소하고 있어 하락 지속 가능성을 높입니다.",
+        "my_edge": "하락 추세가 명확히 유지되고 있어 숏 포지션 유지가 유리합니다."
+      },
+      "risk_factors": [
+        "FOMC 회의 결과 발표로 인한 변동성 증가 가능성",
+        "솔라나 네트워크 장애로 인한 신뢰도 하락"
+      ],
+      "trigger_setup": {
+        "condition": "HOLD일 때만: 재진입 검토 조건",
+        "trigger_price": 198.0,
+        "direction": "SHORT",
+        "reason": "$198.00 지지선 이탈 시 하락 추세 강화 가능성"
+      },
+      "summary": "최종 결정: 포지션 유지 (신뢰도: 80%)"
+    },
+    "timestamp": "2025-10-29T00:42:14.468868"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.6,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.33,
+        "weak_resistance": 203.99,
+        "weak_support": 198.24,
+        "strong_support": 198.55
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.24 하향 돌파시",
+          "entry": 198.0,
+          "take_profit": 195.0,
+          "stop_loss": 199.5,
+          "risk_reward_ratio": 1.5,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "5분봉 및 15분봉에서 MACD 데드크로스",
+            "RSI 50 이하 약세"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$203.99 상향 돌파시",
+          "entry": 204.2,
+          "take_profit": 207.0,
+          "stop_loss": 202.5,
+          "risk_reward_ratio": 1.4,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "RSI 50 이상 강세 전환 가능성",
+            "MACD 골든크로스 발생 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.55에서 반전 캔들 출현시",
+          "entry": 198.7,
+          "take_profit": 202.0,
+          "stop_loss": 197.5,
+          "risk_reward_ratio": 1.65,
+          "reasoning": [
+            "일봉 주요 지지선",
+            "볼린저밴드 수축으로 변동성 감소",
+            "RSI 중립 구간"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $198.24 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198.55는 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T00:45:57.451247"
+  },
+  {
+    "type": "agent_analysis",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:46:13Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 34.66으로 약세 지속, MACD 히스토그램 약간 개선되나 여전히 음수, 거래량 감소",
+          "15m": "RSI 41.2로 중립 접근, MACD 하락 가속화, 거래량 급감",
+          "1h": "RSI 44.75로 약세 지속, MACD 개선 신호 없음, 거래량 증가"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "1H 박스권 상단 돌파 시도 가능성 있으나 RSI와 MACD 개선 필요"
+          },
+          "하락": {
+            "verdict": "강력 지지",
+            "rationale": "5분 및 15분 MACD 데드크로스와 RSI 약세로 하락 가능성 높음"
+          },
+          "박스권": {
+            "verdict": "조건부 지지",
+            "rationale": "단기 지지선에서 반등 가능성 있으나 지속성 불확실"
+          }
+        },
+        "key_signals": {
+          "bullish": "$203.99 상향 돌파 + 1H RSI 50 돌파",
+          "bearish": "$198.24 하향 돌파 + 5분 MACD 데드크로스 지속"
+        },
+        "synthesis": "단기적으로 하락 가능성이 높으며, $198.24 지지선 이탈 시 하락세 강화 예상."
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 추세가 여전히 약세",
+        "단기 과열 후 재조정 가능성",
+        "$198.24 지지선 이탈 시 하락 전환 위험"
+      ],
+      "summary": "거래 신호: 하락 가능성"
+    },
+    "timestamp": "2025-10-29T00:46:52.441522"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_005636",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.89,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.33,
+        "weak_resistance": 203.03,
+        "weak_support": 198.89,
+        "strong_support": 195.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.89 하향 돌파시",
+          "entry": 198.7,
+          "take_profit": 195.0,
+          "stop_loss": 200.5,
+          "risk_reward_ratio": 1.56,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "1H EMA20 하향 돌파",
+            "MACD 데드크로스 진행 중"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 40,
+          "entry_condition": "$203.03 상향 돌파시",
+          "entry": 203.2,
+          "take_profit": 205.33,
+          "stop_loss": 201.5,
+          "risk_reward_ratio": 1.43,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "RSI 50 이상 강세 전환",
+            "MACD 골든크로스 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 10,
+          "entry_condition": "$198.89에서 반전 캔들 출현시",
+          "entry": 199.0,
+          "take_profit": 203.0,
+          "stop_loss": 197.5,
+          "risk_reward_ratio": 2.0,
+          "reasoning": [
+            "15분봉 더블바텀 형성 가능성",
+            "볼린저밴드 중심선 회귀",
+            "RSI 과매도 후 반등 시도"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, $198.89 지지선 이탈 시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198.89는 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T00:57:19.375623"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_005636",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:56:36+00:00Z",
+      "short_term_news": [
+        {
+          "content": "솔라나 네트워크, 10월 27일에 일시적인 장애 발생",
+          "impact_level": 8,
+          "timing": "1일 전"
+        },
+        {
+          "content": "미국 연방준비제도, 10월 29일 FOMC 회의 예정",
+          "impact_level": 7,
+          "timing": "내일"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 2025년 11월 중순에 대규모 기술 업데이트 예정",
+          "impact_level": 9,
+          "timing": "다음 달"
+        },
+        {
+          "content": "솔라나 재단, 새로운 파트너십 발표 (10월 25일)",
+          "impact_level": 6,
+          "timing": "3일 전"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "2억 5천만 달러",
+        "market_cap_rank": "10위",
+        "developer_activity": "주간 150 커밋",
+        "network_stats": "TPS 4,000, 활성 지갑 수 1백만"
+      },
+      "summary": "주요 뉴스 2건 포함, 총 4건 분석"
+    },
+    "timestamp": "2025-10-29T00:57:27.386481"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_005636",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T15:57:27Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 36.1로 약세 지속, MACD 히스토그램 감소세, 거래량 감소",
+          "15m": "RSI 41.09로 중립, MACD 하락 가속화, 거래량 감소",
+          "1h": "RSI 44.7로 약세, MACD 하락 전환, 거래량 증가"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "RSI가 중립 수준이나 MACD 하락세로 강한 상승 신호 부족"
+          },
+          "하락": {
+            "verdict": "조건부 지지",
+            "rationale": "MACD 하락세와 거래량 증가로 하락 가능성 존재"
+          },
+          "박스권": {
+            "verdict": "지지 없음",
+            "rationale": "현재 지표들이 명확한 방향성을 제시하지 않음"
+          }
+        },
+        "key_signals": {
+          "bullish": "$203.03 상향 돌파 시 상승 전환 가능",
+          "bearish": "$198.89 하향 돌파 시 하락 지속 가능"
+        },
+        "synthesis": "현재 시장은 하락 가능성이 높으며, $198.89 지지선 이탈 시 추가 하락이 예상됩니다."
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 40,
+          "하락": 50,
+          "박스권": 10
+        }
+      },
+      "risk_factors": [
+        "1시간봉 MACD 하락 전환",
+        "거래량 증가와 함께 하락세 지속 가능성",
+        "$198.89 지지선 이탈 시 추가 하락 위험"
+      ],
+      "summary": "거래 신호: 하락 가능성"
+    },
+    "timestamp": "2025-10-29T00:57:51.750079"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_010807",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.65,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.33,
+        "weak_resistance": 203.99,
+        "weak_support": 198.66,
+        "strong_support": 198.63
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.66 하향 돌파시",
+          "entry": 198.5,
+          "take_profit": 195.0,
+          "stop_loss": 200.0,
+          "risk_reward_ratio": 1.75,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "1H 박스권 하단 약화",
+            "RSI 50 이하 약세 + MACD 데드크로스 진행 중"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$203.99 상향 돌파시",
+          "entry": 204.2,
+          "take_profit": 207.5,
+          "stop_loss": 202.5,
+          "risk_reward_ratio": 1.64,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "5분봉 RSI 과매도 후 반등",
+            "MACD 골든크로스 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.63에서 반전 캔들 출현시",
+          "entry": 198.8,
+          "take_profit": 203.0,
+          "stop_loss": 197.5,
+          "risk_reward_ratio": 2.8,
+          "reasoning": [
+            "일봉 주요 지지선",
+            "매물대 집중 구간에서 강한 매수세",
+            "RSI 과매도 + 가격-RSI 강세 다이버전스"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $198.66 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198.63은 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T01:09:31.251666"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_010807",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:08:07+00:00Z",
+      "short_term_news": [
+        {
+          "content": "미국 SEC, 암호화폐 거래소에 대한 새로운 규제 발표 예정",
+          "impact_level": 9,
+          "timing": "내일 오전"
+        },
+        {
+          "content": "솔라나 네트워크, 10월 27일에 일시적 장애 발생",
+          "impact_level": 8,
+          "timing": "1일 전"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 주요 금융 기관과의 파트너십 발표",
+          "impact_level": 7,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나 개발자 컨퍼런스, 11월 5일 개최 예정",
+          "impact_level": 6,
+          "timing": "다음 주"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "2억 5천만 달러",
+        "market_cap_rank": "10위",
+        "developer_activity": "주간 150 커밋",
+        "network_stats": "TPS 2,500, 활성 지갑 수 1백만"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:09:48.224937"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_010807",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:09:48Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 39.12로 약세 지속, MACD 히스토그램 상승 중이나 거래량 감소",
+          "15m": "RSI 41.3으로 하락세, MACD 하락 가속화, 거래량 감소",
+          "1h": "RSI 44.74로 약세 지속, MACD 전환 중, 거래량 급감"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "5분봉 RSI 반등 가능성 있으나 전반적 약세 지속"
+          },
+          "하락": {
+            "verdict": "조건부 지지",
+            "rationale": "1시간봉 MACD 전환 중, RSI 약세 지속"
+          },
+          "박스권": {
+            "verdict": "지지 없음",
+            "rationale": "전반적 하락세로 박스권 형성 어려움"
+          }
+        },
+        "key_signals": {
+          "bullish": "5분봉 RSI 50 돌파 + 거래량 증가",
+          "bearish": "15분봉 RSI 40 이탈 + MACD 하락 지속"
+        },
+        "synthesis": "현재 시장은 전반적으로 약세를 보이며, $198.66 지지선 이탈 시 하락 가능성이 높습니다."
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 추세가 여전히 약세",
+        "단기 과열 후 재조정 가능성",
+        "$153 저항선 돌파 실패 시 하락 전환 위험"
+      ],
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:10:38.750232"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_010807",
+    "agent": "stoic",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:08:07+00:00Z",
+      "current_position_analysis": {
+        "existing": "LONG 0.06 @ $148.88 (PnL: +1.30%)",
+        "transition_strategy": {
+          "recommended_action": "CLOSE_AND_REVERSE",
+          "rationale": "하락 시나리오가 우세하므로 기존 롱 청산 후 숏 진입 권장",
+          "execution_steps": [
+            "1. 기존 LONG 0.06 청산 ($198.65)",
+            "2. 5분 대기 후 시장 재평가",
+            "3. $198.50 하향 돌파 확인 시 숏 진입"
+          ]
+        }
+      },
+      "market_risk_state": {
+        "overall_risk": "MODERATE",
+        "volatility": "현재 ATR 0.76% - 정상 범위",
+        "key_concerns": [
+          "SEC 규제 발표 예정",
+          "시장 변동성 증가 가능성"
+        ]
+      },
+      "scenario_strategies": [
+        {
+          "scenario": "하락",
+          "probability": 50,
+          "recommendation": "EXECUTE",
+          "quant_support": "조건부 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 이상",
+                "change": 3
+              },
+              {
+                "factor": "퀀트 조건부 지지",
+                "change": 2
+              },
+              {
+                "factor": "하락 추세 일치",
+                "change": 3
+              }
+            ],
+            "final_leverage": 18,
+            "position_size_percent": 22.5
+          },
+          "risk_management": {
+            "entry": 198.5,
+            "stop_loss": 200.0,
+            "stop_percent": 0.76,
+            "take_profit": 195.0,
+            "risk_reward": 1.75,
+            "expected_return_percent": 1.76,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.50 하향 돌파 + 15분봉 확인",
+            "즉시 손절: $200.00 또는 진입가 대비 +0.76%",
+            "부분 익절: $196.50에서 50% 청산"
+          ]
+        },
+        {
+          "scenario": "박스권",
+          "probability": 20,
+          "recommendation": "AVOID",
+          "quant_support": "지지 없음",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 지지 없음",
+                "change": 0
+              },
+              {
+                "factor": "횡보장 중립",
+                "change": 0
+              }
+            ],
+            "final_leverage": 10,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 198.8,
+            "stop_loss": 197.5,
+            "stop_percent": 0.65,
+            "take_profit": 203.0,
+            "risk_reward": 2.8,
+            "expected_return_percent": 2.11,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.63에서 반전 캔들 출현시",
+            "거래량 증가 확인 필수",
+            "기존 롱 포지션과 병합 고려"
+          ]
+        },
+        {
+          "scenario": "상승",
+          "probability": 30,
+          "recommendation": "AVOID",
+          "quant_support": "약한 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 약한 지지",
+                "change": 1
+              },
+              {
+                "factor": "역추세 매매",
+                "change": -3
+              }
+            ],
+            "final_leverage": 8,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 204.2,
+            "stop_loss": 202.5,
+            "stop_percent": 0.83,
+            "take_profit": 207.5,
+            "risk_reward": 1.64,
+            "expected_return_percent": 1.62,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "매우 낮은 확률로 진입 회피 권장",
+            "기존 롱 포지션 유지가 더 유리할 수 있음",
+            "극소량 추가만 고려"
+          ]
+        }
+      ],
+      "event_risks": [
+        {
+          "event": "SEC 규제 브리핑",
+          "date": "내일",
+          "impact": "HIGH",
+          "action": "포지션 50% 축소 권장"
+        }
+      ],
+      "final_decision": {
+        "recommended_scenario": "하락",
+        "confidence_level": "HIGH",
+        "optimal_leverage": 18,
+        "position_size": "총자본의 22.5% (증거금)",
+        "expected_risk": "2.5-3%",
+        "expected_reward": "4.4-5.3%",
+        "position_transition": {
+          "from": "LONG 0.06",
+          "to": "SHORT 405.0% 노출",
+          "net_exposure_change": "기존 롱 청산 후 숏 405.0% 노출"
+        },
+        "key_warnings": [
+          "기존 롱 포지션 청산 손실 고려",
+          "손절가 $200.00 철저히 준수",
+          "SEC 브리핑 리스크 모니터링"
+        ]
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:11:01.190013"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_011727",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.0,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 205.0,
+        "weak_resistance": 203.0,
+        "weak_support": 198.0,
+        "strong_support": 195.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.00 하향 돌파시",
+          "entry": 197.8,
+          "take_profit": 195.0,
+          "stop_loss": 199.5,
+          "risk_reward_ratio": 1.87,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "1H 박스권 하단 약화",
+            "RSI 50 이하 약세 + MACD 데드크로스 진행 중"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$203.00 상향 돌파시",
+          "entry": 203.2,
+          "take_profit": 205.0,
+          "stop_loss": 201.5,
+          "risk_reward_ratio": 1.13,
+          "reasoning": [
+            "1H 박스권 상단 돌파 시도",
+            "5분봉 RSI 과매도 후 반등",
+            "MACD 골든크로스 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.00에서 반전 캔들 출현시",
+          "entry": 198.2,
+          "take_profit": 203.0,
+          "stop_loss": 197.0,
+          "risk_reward_ratio": 2.53,
+          "reasoning": [
+            "일봉 주요 지지선",
+            "매물대 집중 구간에서 강한 매수세",
+            "RSI 과매도 + 가격-RSI 강세 다이버전스"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $198.00 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198은 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T01:18:28.630058"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_011727",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:17:27+00:00Z",
+      "short_term_news": [
+        {
+          "content": "미국 연방준비제도, 10월 30일 FOMC 회의 결과 발표 예정",
+          "impact_level": 8,
+          "timing": "2일 후"
+        },
+        {
+          "content": "솔라나 네트워크, 10월 29일 정기 점검 예정",
+          "impact_level": 7,
+          "timing": "1일 후"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나 재단, 2026년까지 2억 달러 규모의 생태계 지원 계획 발표",
+          "impact_level": 9,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나, 2025년 11월 개발자 컨퍼런스 개최 예정",
+          "impact_level": 6,
+          "timing": "다음 달"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "3억 5천만 달러",
+        "market_cap_rank": "10위",
+        "developer_activity": "주간 150 커밋",
+        "network_stats": "TPS 2,500, 활성 지갑 수 1,200,000"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:18:32.250474"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_012420",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 198.08,
+      "market_state": "박스권",
+      "key_levels": {
+        "strong_resistance": 203.0,
+        "weak_resistance": 200.0,
+        "weak_support": 198.0,
+        "strong_support": 195.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$198.00 하향 돌파시",
+          "entry": 197.8,
+          "take_profit": 195.0,
+          "stop_loss": 199.5,
+          "risk_reward_ratio": 1.87,
+          "reasoning": [
+            "1D 하락 추세 지속",
+            "15분봉 MACD 데드크로스",
+            "RSI 50 이하 약세"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$200.00 상향 돌파시",
+          "entry": 200.2,
+          "take_profit": 203.0,
+          "stop_loss": 198.5,
+          "risk_reward_ratio": 1.4,
+          "reasoning": [
+            "1H EMA20 상향 돌파 시도",
+            "5분봉 RSI 과매도 후 반등",
+            "MACD 골든크로스 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$198.00에서 반전 캔들 출현시",
+          "entry": 198.2,
+          "take_profit": 200.0,
+          "stop_loss": 197.5,
+          "risk_reward_ratio": 2.4,
+          "reasoning": [
+            "일봉 주요 지지선",
+            "거래량 감소로 변동성 축소",
+            "RSI 다이버전스"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, $198.00 지지선 이탈 시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $198.00은 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T01:26:30.260883"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_012420",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:24:20+00:00Z",
+      "short_term_news": [
+        {
+          "content": "미국 SEC, 암호화폐 거래소에 대한 새로운 규제 발표 예정",
+          "impact_level": 9,
+          "timing": "내일 오전"
+        },
+        {
+          "content": "솔라나 네트워크, 10월 27일 DDoS 공격으로 인해 2시간 동안 서비스 중단",
+          "impact_level": 8,
+          "timing": "1일 전"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 2026년까지 TPS 2배 증가 목표로 기술 로드맵 발표",
+          "impact_level": 8,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나 재단, 새로운 파트너십 체결로 NFT 마켓플레이스 확장 발표",
+          "impact_level": 7,
+          "timing": "다음 주"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "3억 5천만 달러",
+        "market_cap_rank": "7위",
+        "developer_activity": "지난 주 120 커밋",
+        "network_stats": "TPS 4,500, 활성 지갑 수 1,200,000"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:26:47.392188"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_012420",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:26:47Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 40.81로 횡보, MACD 약세 전환 중, 거래량 감소",
+          "15m": "RSI 40.41로 횡보, MACD 약세 전환 중, 거래량 감소",
+          "1h": "RSI 44.2로 횡보, MACD 약세 전환 중, 거래량 감소"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "5분봉 RSI 과매도 후 반등 가능성 있으나 거래량 부족"
+          },
+          "하락": {
+            "verdict": "강력 지지",
+            "rationale": "1D 하락 추세 지속 및 15분봉 MACD 데드크로스"
+          },
+          "박스권": {
+            "verdict": "조건부 지지",
+            "rationale": "$198.00 지지선에서 반전 가능성"
+          }
+        },
+        "key_signals": {
+          "bullish": "$200.00 상향 돌파 시 상승 전환",
+          "bearish": "$198.00 하향 돌파 시 하락 지속"
+        },
+        "synthesis": "현재 시장은 $198.00 지지선 이탈 시 하락 가능성이 높으며, 상승 전환을 위해서는 $200.00 돌파가 필요합니다."
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 추세가 여전히 약세",
+        "단기 과열 후 재조정 가능성",
+        "$198.00 저항선 돌파 실패 시 하락 전환 위험"
+      ],
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:27:21.267578"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_012420",
+    "agent": "stoic",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T16:24:20+00:00Z",
+      "current_position_analysis": {
+        "existing": "SHORT 16.92 @ $198.5 (PnL: -0.09%)",
+        "transition_strategy": {
+          "recommended_action": "HOLD_AND_MONITOR",
+          "rationale": "하락 시나리오가 강력 지지받고 있으며, 현재 포지션이 하락 추세와 일치",
+          "execution_steps": [
+            "1. $198.00 하향 돌파 여부 지속 모니터링",
+            "2. $199.50 이상 상승 시 손절 고려",
+            "3. $195.00 도달 시 부분 청산 검토"
+          ]
+        }
+      },
+      "market_risk_state": {
+        "overall_risk": "MODERATE",
+        "volatility": "현재 ATR 0.75% - 정상 범위",
+        "key_concerns": [
+          "SEC 규제 발표로 인한 시장 변동성 증가 가능성",
+          "단기 과열 후 조정 위험"
+        ]
+      },
+      "scenario_strategies": [
+        {
+          "scenario": "하락",
+          "probability": 50,
+          "recommendation": "EXECUTE",
+          "quant_support": "강력 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 이상",
+                "change": 3
+              },
+              {
+                "factor": "퀀트 강력 지지",
+                "change": 3
+              },
+              {
+                "factor": "하락 추세 일치",
+                "change": 3
+              }
+            ],
+            "final_leverage": 19,
+            "position_size_percent": 22.5
+          },
+          "risk_management": {
+            "entry": 197.8,
+            "stop_loss": 199.5,
+            "stop_percent": 0.85,
+            "take_profit": 195.0,
+            "risk_reward": 1.87,
+            "expected_return_percent": 1.42,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.00 하향 돌파 + 15분봉 확인",
+            "즉시 손절: $199.50 또는 진입가 대비 +0.85%",
+            "부분 익절: $196.00에서 50% 청산"
+          ]
+        },
+        {
+          "scenario": "박스권",
+          "probability": 20,
+          "recommendation": "CONDITIONAL",
+          "quant_support": "조건부 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 조건부 지지",
+                "change": 2
+              },
+              {
+                "factor": "횡보장 중립",
+                "change": 0
+              }
+            ],
+            "final_leverage": 12,
+            "position_size_percent": 12.0
+          },
+          "risk_management": {
+            "entry": 198.2,
+            "stop_loss": 197.5,
+            "stop_percent": 0.35,
+            "take_profit": 200.0,
+            "risk_reward": 2.4,
+            "expected_return_percent": 0.91,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $198.00에서 반전 캔들 출현 시",
+            "거래량 증가 확인 필수",
+            "기존 포지션과 병합 고려"
+          ]
+        },
+        {
+          "scenario": "상승",
+          "probability": 30,
+          "recommendation": "AVOID",
+          "quant_support": "약한 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 약한 지지",
+                "change": 1
+              },
+              {
+                "factor": "역추세 매매",
+                "change": -3
+              }
+            ],
+            "final_leverage": 8,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 200.2,
+            "stop_loss": 198.5,
+            "stop_percent": 0.85,
+            "take_profit": 203.0,
+            "risk_reward": 1.4,
+            "expected_return_percent": 1.4,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "매우 낮은 확률로 진입 회피 권장",
+            "기존 숏 포지션 유지가 더 유리할 수 있음",
+            "극소량 추가만 고려"
+          ]
+        }
+      ],
+      "event_risks": [
+        {
+          "event": "SEC 규제 브리핑",
+          "date": "내일",
+          "impact": "HIGH",
+          "action": "포지션 50% 축소 권장"
+        }
+      ],
+      "final_decision": {
+        "recommended_scenario": "하락",
+        "confidence_level": "HIGH",
+        "optimal_leverage": 19,
+        "position_size": "총자본의 22.5% (증거금)",
+        "expected_risk": "2.5-3%",
+        "expected_reward": "4.7-5.6%",
+        "position_transition": {
+          "from": "SHORT 16.92",
+          "to": "SHORT 427.5% 노출",
+          "net_exposure_change": "기존 숏 유지 및 추가 숏 427.5% 노출"
+        },
+        "key_warnings": [
+          "기존 숏 포지션 유지 손실 고려",
+          "손절가 $199.50 철저히 준수",
+          "SEC 브리핑 리스크 모니터링"
+        ]
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:27:35.605042"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_012420",
+    "agent": "synthesizer",
+    "analysis": {
+      "analysis_summary": {
+        "chart_view": "$198.00 지지선 근처에서 횡보 중이며, 하락 압력이 강함",
+        "market_state": "횡보",
+        "key_levels": {
+          "current_price": 198.76,
+          "resistance": 200.0,
+          "support": 198.0
+        }
+      },
+      "position_check": {
+        "has_position": true,
+        "current_position": "SHORT @ 198.5",
+        "pnl_percent": -0.09,
+        "position_decision": "HOLD_POSITION"
+      },
+      "final_decision": {
+        "action": "HOLD_POSITION",
+        "confidence": 75,
+        "scenario": "$198.00 지지선 이탈 시 추가 하락 가능성",
+        "rationale": "현재 포지션이 하락 시나리오와 일치하며, $198.00 지지선 이탈 시 하락 지속 가능성 높음"
+      },
+      "execution_plan": {
+        "order_type": "LIMIT",
+        "entry_price": 198.5,
+        "stop_loss": 199.5,
+        "take_profit_1": 196.0,
+        "take_profit_2": 195.0,
+        "position_size_percent": 22.5,
+        "leverage": 19,
+        "risk_amount": "총자본의 2%"
+      },
+      "adjustment_plan": {
+        "current_size": 16.92,
+        "target_size": 16.92,
+        "new_stop_loss": 199.5,
+        "rationale": "현재 포지션 유지, 손절가 조정 필요 없음"
+      },
+      "chart_insights": {
+        "lux_algo_signal": "오실레이터 점 크기 작음, 추세 전환 신호 약함",
+        "hidden_pattern": "거래량 감소와 함께 $198.00 지지선 테스트",
+        "volume_story": "거래량 감소로 인해 변동성 축소",
+        "my_edge": "$198.00 지지선 이탈 시 하락 가능성 높음"
+      },
+      "risk_factors": [
+        "SEC 규제 발표로 인한 변동성 증가 가능성",
+        "단기 과열 후 조정 위험"
+      ],
+      "trigger_setup": {
+        "condition": "HOLD일 때만: 재진입 검토 조건",
+        "trigger_price": 198.0,
+        "direction": "SHORT",
+        "reason": "$198.00 지지선 이탈 시 하락 지속 가능성"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T01:28:10.353187"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_072300",
+    "agent": "chartist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "current_price": 194.24,
+      "market_state": "하락 추세",
+      "key_levels": {
+        "strong_resistance": 200.0,
+        "weak_resistance": 197.5,
+        "weak_support": 192.0,
+        "strong_support": 190.0
+      },
+      "scenarios": [
+        {
+          "type": "하락",
+          "probability": 50,
+          "entry_condition": "$192.00 하향 돌파시",
+          "entry": 191.8,
+          "take_profit": 190.0,
+          "stop_loss": 193.5,
+          "risk_reward_ratio": 1.8,
+          "reasoning": [
+            "1D 차트에서 EMA50 하향 돌파",
+            "RSI 40 이하 약세 지속",
+            "MACD 데드크로스 진행 중"
+          ]
+        },
+        {
+          "type": "상승",
+          "probability": 30,
+          "entry_condition": "$197.50 상향 돌파시",
+          "entry": 197.7,
+          "take_profit": 200.0,
+          "stop_loss": 196.0,
+          "risk_reward_ratio": 1.5,
+          "reasoning": [
+            "1H 차트에서 박스권 상단 돌파 시도",
+            "RSI 50 이상 강세 전환",
+            "MACD 골든크로스 가능성"
+          ]
+        },
+        {
+          "type": "박스권",
+          "probability": 20,
+          "entry_condition": "$192.00에서 반전 캔들 출현시",
+          "entry": 192.2,
+          "take_profit": 194.0,
+          "stop_loss": 191.0,
+          "risk_reward_ratio": 2.0,
+          "reasoning": [
+            "15분 차트에서 더블바텀 형성 가능성",
+            "매물대 집중 구간에서 매수세 유입",
+            "RSI 과매도 구간에서 반등 시도"
+          ]
+        }
+      ],
+      "summary": "4개 시간대 종합 분석 결과, 단기적으로 $192.00 지지선 이탈시 하락 가능성이 가장 높습니다. 일봉은 하락 추세, 시간봉은 박스권, 분봉은 약세를 보이고 있어 하방 리스크가 우세합니다. 다만 $192.00은 여러 시간대에서 중요한 지지선이므로 확실한 이탈 확인이 필요합니다."
+    },
+    "timestamp": "2025-10-29T07:23:57.399722"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_072300",
+    "agent": "journalist",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T22:23:00+00:00Z",
+      "short_term_news": [
+        {
+          "content": "미국 SEC, 암호화폐 거래소에 대한 새로운 규제 발표 예정",
+          "impact_level": 9,
+          "timing": "내일 오전"
+        },
+        {
+          "content": "솔라나 네트워크, 10월 28일 오전 10시(UTC)부터 2시간 동안 네트워크 장애 발생",
+          "impact_level": 8,
+          "timing": "12시간 전"
+        }
+      ],
+      "long_term_news": [
+        {
+          "content": "솔라나, 주요 금융 기관과의 파트너십 체결 발표",
+          "impact_level": 8,
+          "timing": "이미 발표됨"
+        },
+        {
+          "content": "솔라나, 2025년 11월 중순에 대규모 기술 업데이트 예정",
+          "impact_level": 7,
+          "timing": "다음 달 중순"
+        }
+      ],
+      "data_metrics": {
+        "24h_volume": "1,500,000,000 USDT",
+        "market_cap_rank": "10위",
+        "developer_activity": "주간 150 커밋",
+        "network_stats": "TPS 4,000, 활성 지갑 수 1,200,000"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T07:24:03.372022"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_072300",
+    "agent": "quant",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T22:24:03Z",
+      "db_analysis": {
+        "similar_patterns_found": 0,
+        "note": "과거 유사 패턴 없음 - 기술적 지표 분석에만 의존"
+      },
+      "integrated_analysis": {
+        "timeframe_analysis": {
+          "5m": "RSI 65.08로 과매수 영역 접근, MACD 히스토그램 하락세, 거래량 감소",
+          "15m": "RSI 38.81로 약세 지속, MACD 히스토그램 상승세 전환, 거래량 감소",
+          "1h": "RSI 38.0으로 약세 지속, MACD 히스토그램 하락세, 거래량 감소"
+        },
+        "scenario_technical_view": {
+          "상승": {
+            "verdict": "약한 지지",
+            "rationale": "1H MACD 개선 가능성 있으나 RSI 약세 지속"
+          },
+          "하락": {
+            "verdict": "조건부 지지",
+            "rationale": "5m RSI 과매수 상태에서 하락 가능성"
+          },
+          "박스권": {
+            "verdict": "지지 없음",
+            "rationale": "모든 시간대에서 명확한 방향성 부재"
+          }
+        },
+        "key_signals": {
+          "bullish": "$197.50 상향 돌파시 RSI 50 이상 강세 전환",
+          "bearish": "$192.00 하향 돌파시 RSI 40 이하 약세 지속"
+        },
+        "synthesis": "단기적으로 $192.00 지지선 이탈시 하락 가능성이 가장 높으며, 기술적 지표는 약세를 지지"
+      },
+      "scenario_analysis": {
+        "note": "과거 데이터 없음 - 차티스트 시나리오 확률만 참고",
+        "chartist_probabilities": {
+          "상승": 30,
+          "하락": 50,
+          "박스권": 20
+        }
+      },
+      "risk_factors": [
+        "1시간봉 추세가 여전히 약세",
+        "단기 과열 후 재조정 가능성",
+        "$192.00 지지선 이탈시 하락 전환 위험"
+      ],
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T07:24:31.233835"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_072300",
+    "agent": "stoic",
+    "analysis": {
+      "asset": "SOLUSDT",
+      "timestamp_utc": "2025-10-28T22:23:00+00:00Z",
+      "current_position_analysis": {
+        "existing": "NONE",
+        "transition_strategy": {
+          "recommended_action": "NEW_ENTRY",
+          "rationale": "포지션이 없으므로 하락 시나리오에 따라 신규 숏 진입 권장",
+          "execution_steps": [
+            "1. $192.00 하향 돌파 확인",
+            "2. 15분봉 마감 확인",
+            "3. 숏 포지션 진입"
+          ]
+        }
+      },
+      "market_risk_state": {
+        "overall_risk": "MODERATE",
+        "volatility": "현재 ATR 0.77% - 정상 범위",
+        "key_concerns": [
+          "SEC 규제 발표 예정",
+          "솔라나 네트워크 장애 발생 가능성"
+        ]
+      },
+      "scenario_strategies": [
+        {
+          "scenario": "하락",
+          "probability": 50,
+          "recommendation": "EXECUTE",
+          "quant_support": "조건부 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 이상",
+                "change": 3
+              },
+              {
+                "factor": "퀀트 조건부 지지",
+                "change": 2
+              },
+              {
+                "factor": "하락 추세 일치",
+                "change": 3
+              }
+            ],
+            "final_leverage": 18,
+            "position_size_percent": 22.5
+          },
+          "risk_management": {
+            "entry": 191.8,
+            "stop_loss": 193.5,
+            "stop_percent": 0.88,
+            "take_profit": 190.0,
+            "risk_reward": 1.8,
+            "expected_return_percent": 0.94,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $192.00 하향 돌파 + 15분봉 확인",
+            "즉시 손절: $193.5 또는 진입가 대비 +0.88%",
+            "부분 익절: $190.5에서 50% 청산"
+          ]
+        },
+        {
+          "scenario": "박스권",
+          "probability": 20,
+          "recommendation": "CONDITIONAL",
+          "quant_support": "지지 없음",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 지지 없음",
+                "change": 0
+              },
+              {
+                "factor": "횡보장 중립",
+                "change": 0
+              }
+            ],
+            "final_leverage": 10,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 192.2,
+            "stop_loss": 191.0,
+            "stop_percent": 0.63,
+            "take_profit": 194.0,
+            "risk_reward": 2.0,
+            "expected_return_percent": 0.94,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "진입: $192.00에서 반전 캔들 출현 시",
+            "거래량 증가 확인 필수",
+            "기존 롱 포지션과 병합 고려"
+          ]
+        },
+        {
+          "scenario": "상승",
+          "probability": 30,
+          "recommendation": "AVOID",
+          "quant_support": "약한 지지",
+          "leverage_calculation": {
+            "base": 10,
+            "adjustments": [
+              {
+                "factor": "확률 50% 미만",
+                "change": 0
+              },
+              {
+                "factor": "퀀트 약한 지지",
+                "change": 1
+              },
+              {
+                "factor": "역추세 매매",
+                "change": -3
+              }
+            ],
+            "final_leverage": 8,
+            "position_size_percent": 7.5
+          },
+          "risk_management": {
+            "entry": 197.7,
+            "stop_loss": 196.0,
+            "stop_percent": 0.86,
+            "take_profit": 200.0,
+            "risk_reward": 1.5,
+            "expected_return_percent": 1.16,
+            "max_loss_amount": "총자본의 2%"
+          },
+          "execution_rules": [
+            "매우 낮은 확률로 진입 회피 권장",
+            "기존 롱 포지션 유지가 더 유리할 수 있음",
+            "극소량 추가만 고려"
+          ]
+        }
+      ],
+      "event_risks": [
+        {
+          "event": "SEC 규제 브리핑",
+          "date": "내일",
+          "impact": "HIGH",
+          "action": "포지션 50% 축소 권장"
+        }
+      ],
+      "final_decision": {
+        "recommended_scenario": "하락",
+        "confidence_level": "HIGH",
+        "optimal_leverage": 18,
+        "position_size": "총자본의 22.5% (증거금)",
+        "expected_risk": "2.5-3%",
+        "expected_reward": "4.8-5.76%",
+        "position_transition": {
+          "from": "NONE",
+          "to": "SHORT 405% 노출",
+          "net_exposure_change": "신규 숏 포지션 진입"
+        },
+        "key_warnings": [
+          "손절가 $193.5 철저히 준수",
+          "SEC 이벤트 리스크 모니터링",
+          "진입 조건 확인 필수"
+        ]
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T07:24:58.423957"
+  },
+  {
+    "type": "agent_analysis",
+    "run_id": "RUN_20251029_072300",
+    "agent": "synthesizer",
+    "analysis": {
+      "analysis_summary": {
+        "chart_view": "SOLUSDT는 전반적으로 하락 추세를 보이며, $192.00 지지선이 중요한 역할을 하고 있습니다.",
+        "market_state": "하락",
+        "key_levels": {
+          "current_price": 194.28,
+          "resistance": 197.5,
+          "support": 192.0
+        }
+      },
+      "position_check": {
+        "has_position": false,
+        "current_position": "",
+        "pnl_percent": 0.0,
+        "position_decision": "NEW_ENTRY"
+      },
+      "final_decision": {
+        "action": "SELL",
+        "confidence": 85,
+        "scenario": "$192.00 하향 돌파 시 숏 포지션 진입",
+        "rationale": "하락 추세 지속과 $192.00 지지선 이탈 시 하락 가능성 높음"
+      },
+      "execution_plan": {
+        "order_type": "STOP",
+        "entry_price": 191.8,
+        "stop_loss": 193.5,
+        "take_profit_1": 190.0,
+        "take_profit_2": 189.0,
+        "position_size_percent": 22.5,
+        "leverage": 18,
+        "risk_amount": "총자본의 2%"
+      },
+      "adjustment_plan": {
+        "current_size": 0.0,
+        "target_size": 0.0,
+        "new_stop_loss": 0.0,
+        "rationale": ""
+      },
+      "chart_insights": {
+        "lux_algo_signal": "큰 점이 하락 추세를 지지",
+        "hidden_pattern": "RSI 과매수 상태에서 하락 가능성",
+        "volume_story": "거래량 감소로 하락 압력 지속",
+        "my_edge": "$192.00 지지선 이탈 시 강한 하락 가능성"
+      },
+      "risk_factors": [
+        "SEC 규제 발표 예정",
+        "솔라나 네트워크 장애 발생 가능성"
+      ],
+      "trigger_setup": {
+        "condition": "HOLD일 때만: 재진입 검토 조건",
+        "trigger_price": 192.0,
+        "direction": "SHORT",
+        "reason": "$192.00 지지선 이탈이 중요한 하락 신호"
+      },
+      "summary": "분석 완료"
+    },
+    "timestamp": "2025-10-29T07:25:20.313422"
+  }
+]

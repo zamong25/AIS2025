@@ -109,3 +109,7 @@ reports/
 
 # mock 데이터는 포함
 !data/mock_dashboard.json
+
+# AI 에이전트 분석 데이터 포함 (데모용)
+!data/logs/agent_analysis.json
+!data/logs/dashboard_logs.json
